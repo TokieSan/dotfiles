@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/elt0khy/Documents/Random GIMP/Arch Background2.png"
+let background = "#0b0c0c"
+let foreground = "#c0c0c0"
+let cursor     = "#c0c0c0"
+
+" Colors
+let color0  = "#0b0c0c"
+let color1  = "#218D75"
+let color2  = "#239D82"
+let color3  = "#23B292"
+let color4  = "#7F8080"
+let color5  = "#24C19F"
+let color6  = "#24D1AC"
+let color7  = "#c0c0c0"
+let color8  = "#868686"
+let color9  = "#218D75"
+let color10 = "#239D82"
+let color11 = "#23B292"
+let color12 = "#7F8080"
+let color13 = "#24C19F"
+let color14 = "#24D1AC"
+let color15 = "#c0c0c0"
