@@ -1,0 +1,12 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+wal -i "$(< "$(HOME)/.cache/wal/wal")"      
+chown elt0khy /sys/class/backlight/ideapad/brightness
+xbindkeys 
+/usr/bin/dbus-send --session --type=method_call --dest=org.freedesktop.ScreenSaver /ScreenSaver org.freedesktop.ScreenSaver.Lock
+sudo mount /dev/sda5 /home/elt0khy/shared
+swapon /dev/sda6
+#feh --bg-scale /home/elt0khy/Documents/Random\ GIMP/Arch\ Background2.png
+#/home/elt0khy/dwm-bar/dwm_bar.sh
+
+#setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle
