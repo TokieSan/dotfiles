@@ -101,6 +101,9 @@
 "flameshot gui"
 	Print
 
+"falmeshot full -p /home/elt0khy/Pictures/scr/"
+	Alt + Print
+
 "systemctl suspend"
 	Control + Alt + l
 
