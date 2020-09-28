@@ -117,5 +117,7 @@
 	Control + Shift + c
 
 "mpv $(xclip -o)"
-	Shift + p
+	Control + Shift + y 
 
+"libreoffice"
+	Control + Shift + l
