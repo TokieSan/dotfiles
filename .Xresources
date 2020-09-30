@@ -1,15 +1,7 @@
 xterm*Background: #121414
 
-#URxvt.perl-ext-common:/home/elt0khy/.fonts 
-#                       resize-font
-#Urxvt.perl-lib: /home/elt0khy/.fonts/
-URxvt.font: xft:Ubuntu Mono:size=10,
-			xft:Amiri:size=11,
-			xft:WenQuanYi Bitmap Song:size=8, 
-			xft:FreeSerif:style=Regular, 
-			xft:unifont:style=Medium:antialias=false,
-			xft:Inconsolata Nerd Font Mono:size=10
-
+URxvt.font: xft:Ubuntu Mono:size=10, Amiri:size=11
+URxvt.perl-ext-common: font-size
 URxvt.scrollBar: false
 URxvt.termName: xterm-256color
 URxvt.internalBorder: 18
@@ -17,5 +9,9 @@ Urxvt.externalBorder: 8
 URxvt.iso14755: false 
 URxvt.iso14755_52: false
 URxvt.letterSpace: 1 
-
-
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
