@@ -81,7 +81,7 @@
 	Print
 
 "falmeshot full -p /home/elt0khy/Pictures/scr/"
-	Alt + Print
+	Shift + Print
 
 "systemctl suspend"
 	Control + Alt + l
@@ -121,3 +121,6 @@
 
 "libreoffice"
 	Control + Shift + l
+
+"bluedevil-wizard"
+	Shift + F11
