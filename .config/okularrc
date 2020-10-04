@@ -6,23 +6,29 @@ Width 1920=1918
 FullScreen=false
 
 [MainWindow]
+DP-2 Height 1080=1057
+DP-2 Width 1920=1918
+DP-2 XPosition=1
+DP-2 YPosition=22
 Height 1080=1057
-State=AAAA/wAAAAD9AAAAAAAAB34AAAPZAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAAB34AAAO3AAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1920=1918
 
 [Recent Files]
 File1[$e]=$HOME/shared/study/ENGL 0210/ENGL Diagnostic Test - Ahmed Gamal Eltokhypdf.pdf
-File2[$e]=$HOME/shared/study/ENGR lab1/58894__Paul_H_Wright__Introduction_to_engineeringBookZZ.org.pdf
-File3[$e]=$HOME/Downloads/CamScanner 09-18-2020 21.11.03_5.jpg
-File4[$e]=$HOME/Downloads/CamScanner 09-18-2020 21.11.03_4.jpg
-File5[$e]=$HOME/shared/My cutie bootie virtual library/BoOoOks/Oxford Very Short Introductions/vsi neoliberalism.pdf
-File6[$e]=$HOME/shared/My cutie bootie virtual library/BoOoOks/Psychology, Mind Control etc/Resistance And Persuasion.pdf
-File7[$e]=$HOME/shared/study/MACT 1121/Lecture 1/MACT 1121 Course Syllabus for Wafik Lotfallah (Sections 5 and 10).pdf
+File2[$e]=$HOME/Downloads/CamScanner 09-18-2020 21.11.03_5.jpg
+File3[$e]=$HOME/Downloads/CamScanner 09-18-2020 21.11.03_4.jpg
+File4[$e]=$HOME/shared/My cutie bootie virtual library/BoOoOks/Oxford Very Short Introductions/vsi neoliberalism.pdf
+File5[$e]=$HOME/shared/My cutie bootie virtual library/BoOoOks/Psychology, Mind Control etc/Resistance And Persuasion.pdf
+File6[$e]=$HOME/shared/study/MACT 1121/Lecture 1/MACT 1121 Course Syllabus for Wafik Lotfallah (Sections 5 and 10).pdf
+File7[$e]=$HOME/shared/study/MACT 1121/Calculus, Early Transcendentals, 8th Edition, by James Stewart.pdf
+File8[$e]=$HOME/shared/study/ENGR lab1/58894__Paul_H_Wright__Introduction_to_engineeringBookZZ.org.pdf
 Name1[$e]=ENGL Diagnostic Test - Ahmed Gamal Eltokhypdf.pdf
-Name2[$e]=58894__Paul_H_Wright__Introduction_to_engineeringBookZZ.org.pdf
-Name3[$e]=CamScanner 09-18-2020 21.11.03_5.jpg
-Name4[$e]=CamScanner 09-18-2020 21.11.03_4.jpg
-Name5[$e]=vsi neoliberalism.pdf
-Name6[$e]=Resistance And Persuasion.pdf
-Name7[$e]=MACT 1121 Course Syllabus for Wafik Lotfallah (Sections 5 and 10).pdf
+Name2[$e]=CamScanner 09-18-2020 21.11.03_5.jpg
+Name3[$e]=CamScanner 09-18-2020 21.11.03_4.jpg
+Name4[$e]=vsi neoliberalism.pdf
+Name5[$e]=Resistance And Persuasion.pdf
+Name6[$e]=MACT 1121 Course Syllabus for Wafik Lotfallah (Sections 5 and 10).pdf
+Name7[$e]=Calculus, Early Transcendentals, 8th Edition, by James Stewart.pdf
+Name8[$e]=58894__Paul_H_Wright__Introduction_to_engineeringBookZZ.org.pdf

@@ -21,5 +21,5 @@ alias gitpush='git push origin main'
 alias gitcommit='git commit -m'
 alias kilall='killall'
 alias quitX='pkill -15 Xorg'
-alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default output.mkv'
-
+alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
+alias ll='ls -all'
