@@ -50,6 +50,7 @@ set number
 syntax on
 set tabstop=4
 set autoindent
+set cindent
 set softtabstop=4
 set expandtab
 set exrc
