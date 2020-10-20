@@ -50,6 +50,7 @@ set number
 syntax on
 set tabstop=4
 set autoindent
+set cindent
 set softtabstop=4
 set expandtab
 set exrc
@@ -58,6 +59,7 @@ set shiftwidth=0
 set noexpandtab
 set splitbelow
 set splitright
+set relativenumber
 "#set colorcolumn=
 "#highlight ColorColumn ctermbg=darkgray
 augroup project
