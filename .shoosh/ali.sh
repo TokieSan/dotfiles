@@ -14,8 +14,6 @@ alias pp='pacman -Ss'
 alias p='pacman -S'
 alias pr='pacman -R'
 alias prs='pacman -Rs'
-alias study='ranger /home/elt0khy/shared/study/'
-alias shows='ranger /home/elt0khy/shared/shows/'
 alias gitadd='git add -f'
 alias gitpush='git push origin main'
 alias gitcommit='git commit -m'
@@ -24,3 +22,11 @@ alias quitX='pkill -15 Xorg'
 alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
 alias ll='ls -all'
 alias prjcpp='cp /home/elt0khy/.shoosh/bases/base.cpp'
+search(){
+	"links" "https://duckduckgo.com/?q=${1}"
+}
+
+op(){
+	"ranger" "/home/elt0khy/shared/${1}"
+}
+
