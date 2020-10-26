@@ -59,7 +59,7 @@ set shiftwidth=0
 set noexpandtab
 set splitbelow
 set splitright
-set relativenumber
+" set relativenumber
 "#set colorcolumn=
 "#highlight ColorColumn ctermbg=darkgray
 augroup project
