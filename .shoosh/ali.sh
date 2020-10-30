@@ -29,4 +29,5 @@ search(){
 op(){
 	"ranger" "/home/elt0khy/shared/${1}"
 }
-
+alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
+alias cln='history -a && urxvt'
