@@ -87,7 +87,7 @@
 	Control + Alt + l
 
 "systemctl poweroff"
-	Shift + Alt + l
+	Control + Shift + Alt + l
 
 "reboot"
 	Shift + Alt + o
@@ -119,8 +119,6 @@
 "mpv $(xclip -o)"
 	Control + Shift + y 
 
-"libreoffice"
-	Control + Shift + l
-
 "bluedevil-wizard"
 	Shift + F11
+

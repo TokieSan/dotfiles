@@ -50,7 +50,6 @@ nnoremap <S-w> :w<CR>
 nnoremap <S-q> :q<CR>
 nnoremap <S-tab> :tabnext<CR>
 nnoremap <S-z> :NERDTree<CR>
-"nnoremap <C-c> gg"+yG<CR>
 nnoremap <C-A> :%y+<CR>
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
