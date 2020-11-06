@@ -11,7 +11,7 @@ alias airdots='sh /home/elt0khy/.shoosh/airdots.sh'
 #alias rm='trash-put'
 alias pulsuspendrestore='systemctl restart --user pulseaudio'
 alias pp='pacman -Ss'
-alias p='pacman -S'
+alias p='sudo pacman -S'
 alias pr='pacman -R'
 alias prs='pacman -Rs'
 alias gitadd='git add -f'
@@ -32,3 +32,4 @@ op(){
 alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
 alias sexkb='setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle'
+alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --delete --exclude={"/home","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/dhcpcd/*","/mnt/backup"} / /mnt/backup'
