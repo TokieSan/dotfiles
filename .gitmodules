@@ -1,0 +1,3 @@
+[submodule "my_dwm"]
+	path = my_dwm
+	url = https://github.com/TokieSan/DWM
