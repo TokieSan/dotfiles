@@ -1,3 +1,6 @@
 [submodule "dwm"]
 	path = dwm
 	url = https://github.com/TokieSan/DWM
+[submodule "dots"]
+	path = shared/projects/dots
+	url = https://github.com/TokieSan/nasa_dots
