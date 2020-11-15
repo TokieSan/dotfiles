@@ -7,8 +7,8 @@ alias nextmusic='dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /
 alias flashcard='anki'
 alias printerconfig='system-config-printer'
 alias vim='nvim'
-alias airdots='sh /home/elt0khy/.shoosh/airdots.sh'
-#alias rm='trash-put'
+alias airdots='bluetoothctl connect 1C:91:9D:A5:DF:0B'
+alias rm='trash-put'
 alias pulsuspendrestore='systemctl restart --user pulseaudio'
 alias pp='pacman -Ss'
 alias p='sudo pacman -S'
@@ -33,3 +33,4 @@ alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
 alias sexkb='setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle'
 alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --delete --exclude={"/home","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/dhcpcd/*","/mnt/backup"} / /mnt/backup'
+dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video2; }
