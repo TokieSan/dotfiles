@@ -21,7 +21,11 @@ alias kilall='killall'
 alias quitX='pkill -15 Xorg'
 alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
 alias ll='ls -all'
-alias prjcpp='cp /home/elt0khy/.shoosh/bases/base.cpp'
+
+prjcpp() {
+	"cp" "/home/elt0khy/.shoosh/bases/base.cpp" "${1}" & "vim" "${1}"
+}
+
 search(){
 	"links" "https://duckduckgo.com/?q=${1}"
 }
