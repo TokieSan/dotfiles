@@ -22,7 +22,7 @@ alias ll='ls -all'
 prj() {
 	case ${1} in
 		comp)
-			"touch" "in${2}" & "touch" "out${2}" & "cp" "/home/elt0khy/.shoosh/bases/comp.cpp" "${2}.cpp" & "vim" "${2}.cpp"
+			"touch" "in${2}" & "cp" "/home/elt0khy/.shoosh/bases/comp.cpp" "${2}.cpp" & "vim" "${2}.cpp"
 			;;
 
 		cpp)
