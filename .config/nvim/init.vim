@@ -44,7 +44,7 @@ nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-u> :u<CR>
 nnoremap <S-m> :!g++ -std=c++11 -O2 -Wall "%" -o "%.out"<CR>
-nnoremap <S-k> :!./"%.out"<CR>
+nnoremap <S-k> :terminal ./"%.out"<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <S-w> :w<CR>
 nnoremap <S-q> :q<CR>
