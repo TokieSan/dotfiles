@@ -6,14 +6,11 @@ alias previousmusic='dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spoti
 alias nextmusic='dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next'
 alias flashcard='anki'
 alias printerconfig='system-config-printer'
-alias vim='nvim'
-alias airdots='bluetoothctl connect 1C:91:9D:A5:DF:0B'
 alias rm='trash-put'
 alias pulsuspendrestore='systemctl restart --user pulseaudio'
-alias pp='pacman -Ss'
-alias p='sudo pacman -S'
-alias pr='pacman -R'
-alias prs='pacman -Rs'
+p() {
+	"sudo" "pacman" "-${1}" "${2}"
+}
 alias gitadd='git add -f'
 alias gitpush='git push origin main'
 alias gitcommit='git commit -m'
@@ -22,8 +19,19 @@ alias quitX='pkill -15 Xorg'
 alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
 alias ll='ls -all'
 
-prjcpp() {
-	"cp" "/home/elt0khy/.shoosh/bases/base.cpp" "${1}" & "vim" "${1}"
+prj() {
+	case ${1} in
+		comp)
+			"touch" "in${2}" & "touch" "out${2}" & "cp" "/home/elt0khy/.shoosh/bases/comp.cpp" "${2}.cpp" & "vim" "${2}.cpp"
+			;;
+
+		cpp)
+			"cp" "/home/elt0khy/.shoosh/bases/base.cpp" "${2}" & "vim" "${2}"
+			;;
+		*)
+			echo -n "Issue"
+			;;
+	esac
 }
 
 search(){
