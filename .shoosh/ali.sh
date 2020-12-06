@@ -9,7 +9,10 @@ alias printerconfig='system-config-printer'
 alias rm='trash-put'
 alias pulsuspendrestore='systemctl restart --user pulseaudio'
 p() {
-	"sudo" "pacman" "-${1}" "${2}"
+	for i in $@
+	do
+		"sudo" "pacman" "-${1}" "${i}"
+	done
 }
 alias gitadd='git add -f'
 alias gitpush='git push origin main'
@@ -22,7 +25,7 @@ alias ll='ls -all'
 prj() {
 	case ${1} in
 		comp)
-			"touch" "in${2}" & "cp" "/home/elt0khy/.shoosh/bases/comp.cpp" "${2}.cpp" & "vim" "${2}.cpp"
+			"touch" "${2}.in" & "cp" "/home/elt0khy/.shoosh/bases/comp.cpp" "${2}.cpp" & "vim" "${2}.cpp"
 			;;
 
 		cpp)
@@ -41,6 +44,7 @@ search(){
 op(){
 	"ranger" "/home/elt0khy/shared/${1}"
 }
+alias vi='nvim'
 alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
 alias sexkb='setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle'
