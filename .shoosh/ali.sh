@@ -8,12 +8,8 @@ alias flashcard='anki'
 alias printerconfig='system-config-printer'
 alias rm='trash-put'
 alias pulsuspendrestore='systemctl restart --user pulseaudio'
-p() {
-	for i in $@
-	do
-		"sudo" "pacman" "-${1}" "${i}"
-	done
-}
+alias p='sudo pacman'
+alias du='du -h'
 alias gitadd='git add -f'
 alias gitpush='git push origin main'
 alias gitcommit='git commit -m'
