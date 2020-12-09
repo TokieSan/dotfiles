@@ -33,10 +33,13 @@ set splitbelow
 set splitright
 set cmdheight=1
 set laststatus=2
+" set spell
+" set hlsearch
 
 " set relativenumber
 "#set colorcolumn=
 "#highlight ColorColumn ctermbg=darkgray
+
 augroup project
   autocmd!
   autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
@@ -60,6 +63,7 @@ nnoremap <S-z> :NERDTree<CR>
 nnoremap <C-A> :%y+<CR>
 nnoremap <A-j> :m+<CR>==
 nnoremap <A-k> :m-2<CR>==
+nnoremap <S-z> z=
 
 inoremap <C-v> <ESC>"+pa
 inoremap <A-j> <Esc>:m+<CR>==gi
