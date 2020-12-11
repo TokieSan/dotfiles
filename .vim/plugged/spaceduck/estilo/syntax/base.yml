@@ -1,0 +1,89 @@
+# BASE UI -> Foreground Background buri (bold, underlined, reverse ,italic)
+ColorColumn: '- background'
+Conceal: ''  # IDK what these are bro
+Cursor: 'background grey'
+CursorIM: '' # IDK what these are either...
+CursorColumn: '- cursorLine'
+CursorLine: '- cursorLine'
+CursorLineNr: 'grey2 cursorLine'
+Directory: 'cyan'
+DiffAdd: 'green visualSel'
+DiffChange: 'orange visualSel'
+DiffDelete: 'red visualSel'
+DiffText: 'yellow visualSel'
+EndOfBuffer: 'darkPurp background'
+ErrorMsg: 'red background'
+VertSplit: 'pureBlack pureBlack'
+Folded: 'darkPurp2 background'
+FoldColumn: 'darkPurp background'
+SignColumn: 'darkPurp background'
+IncSearch: 'pureWhite visualSel'
+LineNr: 'darkPurp background'
+MatchParen: 'grey darkPurp'
+ModeMsg: 'purple'
+MoreMsg: 'purple'
+NonText: '@EndOfBuffer'
+Normal: 'foreground background'
+PMenu: 'foreground darkPurp'
+PMenuSel: 'yellow visualSel'
+PmenuSbar: 'foreground darkPurp2'
+PmenuThumb: 'foreground darkPurp2'
+Question: 'purple'
+QuickFixLine: 'foreground cursorLine'
+Search: 'pureWhite search'
+SpecialKey: 'orange background'
+SpellBad: 'red - u'
+SpellLocal: 'foreground - u'
+SpellCap: 'green - u'
+SpellRare: 'yellow - u'
+StatusLine: 'foreground background r'
+StatusLineTerm: '@StatusLine'
+StatusLineTermNC: 'pureBlack darkPurp r'
+StatusLineNC: '@StatusLineTermNC'
+TabLine: 'pureBlack grey'
+TabLineFill: 'grey pureBlack'
+TabLineSel: 'grey2 background'
+Title: 'orange'
+Visual: '- visualSel'
+VisualNOS: '' #TODO
+WarningMsg: 'orange background'
+WildMenu: 'pureBlack grey2'
+diffAdded: 'purple -'
+diffRemoved: 'red -'
+
+# BASE SYNTAX
+Comment: 'darkPurp'
+Constant: 'yellow'
+String: 'cyan'                      # Constant
+Character: '@Constant'              # Constant
+Boolean: '@Constant'                # Constant
+Number: '@Constant'                 # Constant
+Float: '@Constant'                  # Constant
+Identifier: 'foreground'
+Function: 'green'                   # Identifier
+Statement: 'green'
+Conditional: 'green2'               # Statement
+Repeat: '@Statement'                # Statement
+Label: '@Statement'                 # Statement
+Operator: 'orange'                  # Statement
+Keyword: '@Operator'                # Statement
+Exception: ''                       # Statement
+PreProc: 'purple'
+Include: 'green'                    # PreProc
+Define: '@PreProc'                  # PreProc
+Macro: '@PreProc'                   # PreProc
+PreCondit: '@PreProc'               # PreProc
+Type: 'yellow'
+StorageClass: 'green'               # Type
+Structure: 'cyan'                   # Type
+Typedef: 'cyan'                     # Type
+Special: 'purple'
+SpecialChar: 'red'                  # Special
+Tag: '@Special'                     # Special
+Delimiter: 'foreground'             # Special
+SpecialComment: ''                  # Special
+Debug: '@Special'                   # Special
+Underlined: 'green - u'
+Ignore: ''
+Error: '@ErrorMsg'
+Todo: 'pureWhite purple2 u'
