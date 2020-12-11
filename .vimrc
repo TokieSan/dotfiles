@@ -4,19 +4,12 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'tpope/vim-fugitive'"
-
 Plugin 'git://git.wincent.com/command-t.git'
-
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
 Plugin 'preservim/nerdtree'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()           
+filetype plugin indent on   
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -24,10 +17,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'prabirshrestha/vim-lsp'
 call plug#end()
-
-" If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 " Executive used when opening vista sidebar without specifying it.
 " See all the avaliable executives via `:echo g:vista#executives`.
@@ -43,21 +32,17 @@ let g:vista_default_executive = 'ctags'
 
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'PaperColor_dark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified', 'method' ] ]
+      \             [  'gitbranch', 'readonly', 'filename', 'modified', 'method' ] ]
       \ },
       \ 'component_function': {
-      \   'method': 'NearestMethodOrFunction'
+      \   'method': 'NearestMethodOrFunction',
+	  \		'gitbranch': 'FugitiveHead'
       \ },
       \ }
 
-
-let g:eleline_slim=1
-
-
-""" START SETS
 
 set number
 syntax on
@@ -90,8 +75,7 @@ augroup project
   autocmd!
   autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
 augroup END
-:set mouse=a
-"autocmd vimenter * NERDTree
+set mouse=a
 
 autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
