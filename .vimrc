@@ -16,6 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'HugoNikanor/vim-breakpoint'
 call plug#end()
 
 " Executive used when opening vista sidebar without specifying it.
@@ -61,7 +62,7 @@ set shiftwidth=0
 set noexpandtab
 set splitbelow
 set splitright
-set cmdheight=1
+set cmdheight=2
 set noshowmode
 set laststatus=2
 " set spell
@@ -94,6 +95,7 @@ nnoremap <C-A> :%y+<CR>
 nnoremap <A-j> :m+<CR>==
 nnoremap <A-k> :m-2<CR>==
 nnoremap <S-z> z=
+nnoremap <S-p> :BreakpointToggle<CR>
 
 inoremap <C-v> <ESC>"+pa
 inoremap <A-j> <Esc>:m+<CR>==gi
