@@ -25,7 +25,7 @@ prj() {
 			;;
 
 		cpp)
-			"cp" "/home/elt0khy/.shoosh/bases/base.cpp" "${2}.cpp" & "vim" "${2}"
+			"cp" "/home/elt0khy/.shoosh/bases/base.cpp" "${2}.cpp" & "vim" "${2}.cpp"
 			;;
 		*)
 			echo -n "Issue"

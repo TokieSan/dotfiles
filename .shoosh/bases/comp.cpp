@@ -5,6 +5,7 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int,int> pi;
+typedef pair<int, int> pi;
 
 #define PB push_back
 #define MP make_pair
