@@ -17,6 +17,5 @@ alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 
 
 export QT_QPA_PLATFORMTHEME=qt5ct
-
 # PS1='[\u@\h \W]\$ '
 

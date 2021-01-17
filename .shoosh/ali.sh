@@ -21,7 +21,7 @@ alias ll='ls -all'
 prj() {
 	case ${1} in
 		comp)
-			"touch" "${2}.in" & "cp" "/home/elt0khy/.shoosh/bases/comp.cpp" "${2}.cpp" & "vim" "${2}.cpp"
+			"touch" "${2}.in" & "cp" "/home/elt0khy/.shoosh/bases/comp.cpp" "${2}.cpp" & "vim" "${2}.cpp" "+79"
 			;;
 
 		cpp)
@@ -40,9 +40,15 @@ search(){
 op(){
 	"ranger" "/home/elt0khy/shared/${1}"
 }
+
+compress(){
+	"cp" "${1}" "old-${1}"
+	convert ${1} -quality ${3}% -resize ${2}\> ${1} 
+}
 alias vi='nvim'
 alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
 alias sexkb='setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle'
 alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --delete --exclude={"/home","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/dhcpcd/*","/mnt/backup"} / /mnt/backup'
 dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video2; }
+alias sv='sudo vim'
