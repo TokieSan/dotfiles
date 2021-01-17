@@ -33,7 +33,7 @@ let g:vista_default_executive = 'ctags'
 
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor_dark',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [  'gitbranch', 'readonly', 'filename', 'modified', 'method' ] ]
@@ -106,8 +106,7 @@ vnoremap <C-c> "+y
 vnoremap <C-d> "+d
 vnoremap <A-j> :m'>+<CR>gv=gv
 vnoremap <A-k> :m-2<CR>gv=gv
-
-
+ 
 cmap w!! %!sudo tee > /dev/null %
 
 let g:ycm_global_ycm_extra_conf = '/home/elt0khy/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
