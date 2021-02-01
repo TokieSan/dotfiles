@@ -104,6 +104,9 @@
 "playerctl -a previous"
 	Shift + F2
 
+"systemctl hibernate"
+	Control + Shift + Alt + q
+
 "spotify"
 	Control + Shift + s
 
