@@ -38,7 +38,26 @@ search(){
 }
 
 op(){
-	"ranger" "/home/elt0khy/shared/${1}"
+	case ${1} in
+		math)
+			"ranger" "/home/elt0khy/shared/study/math/calc2"
+			;;
+		cs)
+			"ranger" "/home/elt0khy/shared/study/cs/cs2"
+			;;
+		rhet)
+			"ranger" "/home/elt0khy/shared/study/extra/rhet/1010"
+			;;
+		core)
+			"ranger" "/home/elt0khy/shared/study/extra/core"
+			;;
+		phys)
+			"ranger" "/home/elt0khy/shared/study/phys/1"
+			;;
+		*)
+			"ranger" "/home/elt0khy/shared/${1}"
+			;;
+	esac
 }
 
 compress(){
