@@ -17,7 +17,7 @@ alias kilall='killall'
 alias quitX='pkill -15 Xorg'
 alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
 alias ll='ls -all'
-
+alias df='df -h'
 prj() {
 	case ${1} in
 		comp)
@@ -71,3 +71,5 @@ alias sexkb='setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle'
 alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --delete --exclude={"/home","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/dhcpcd/*","/mnt/backup"} / /mnt/backup'
 dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video2; }
 alias sv='sudo vim'
+alias tunnelfast='sudo sshuttle --method=tproxy --remote=eltokhy@52.188.119.232 0.0.0.0/0 ::/0 --exclude=213.181.225.44 --exclude=52.188.119.232'
+alias fastHotspot='nmcli wlan0 wifi hotspot ifname wlp4s0 ssid GNUHostpot password 8888#8888'
