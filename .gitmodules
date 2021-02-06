@@ -9,5 +9,5 @@
 	url = https://github.com/TokieSan/sent
 [submodule "slock"]
 	path = slock 
-	url = https://github.com/TokieSan/slock/tree/mySlock
+	url = https://github.com/TokieSan/slock
 
