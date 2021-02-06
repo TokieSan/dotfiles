@@ -5,9 +5,9 @@
 	path = shared/projects/dots
 	url = https://github.com/TokieSan/nasa_dots
 [submodule "sent"]
-	path = sent/
+	path = sent
 	url = https://github.com/TokieSan/sent
 [submodule "slock"]
-	path = sent/
+	path = sent
 	url = https://github.com/TokieSan/slock
 
