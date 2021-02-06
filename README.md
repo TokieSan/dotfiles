@@ -1,6 +1,6 @@
 # TokieSan: Dotfiles
 
-My conf/dotfiles
+My dot files (configurations). I usually do simple changes that aim to increase productivity and decreaste bloatness. I'm using some shitty software that will be changed immediatly after the foundation of a worthy alternative, or my laziness vanish and I start to improve some of the current available software or write my own.
 
-	Guide WIP
+There is no guide as everything is pretty clear, you'll figure it out.
 
