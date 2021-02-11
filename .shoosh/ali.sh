@@ -73,3 +73,4 @@ dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_
 alias sv='sudo vim'
 alias tunnelfast='sudo sshuttle --method=tproxy --remote=eltokhy@52.188.119.232 0.0.0.0/0 ::/0 --exclude=213.181.225.44 --exclude=52.188.119.232'
 alias fastHotspot='nmcli wlan0 wifi hotspot ifname wlp4s0 ssid GNUHostpot password 8888#8888'
+alias code='codium'
