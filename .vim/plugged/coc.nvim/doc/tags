@@ -103,7 +103,6 @@ coc#start()	coc.txt	/*coc#start()*
 coc#status()	coc.txt	/*coc#status()*
 coc#util#api_version()	coc.txt	/*coc#util#api_version()*
 coc#util#extension_root()	coc.txt	/*coc#util#extension_root()*
-coc#util#float_scroll()	coc.txt	/*coc#util#float_scroll()*
 coc#util#get_config()	coc.txt	/*coc#util#get_config()*
 coc#util#get_config_home()	coc.txt	/*coc#util#get_config_home()*
 coc#util#get_data_home()	coc.txt	/*coc#util#get_data_home()*
@@ -228,12 +227,12 @@ g:coc_disable_transparent_cursor	coc.txt	/*g:coc_disable_transparent_cursor*
 g:coc_disable_uncaught_error	coc.txt	/*g:coc_disable_uncaught_error*
 g:coc_enable_locationlist	coc.txt	/*g:coc_enable_locationlist*
 g:coc_filetype_map	coc.txt	/*g:coc_filetype_map*
-g:coc_force_bundle	coc.txt	/*g:coc_force_bundle*
 g:coc_global_extensions	coc.txt	/*g:coc_global_extensions*
 g:coc_install_yarn_cmd	coc.txt	/*g:coc_install_yarn_cmd*
 g:coc_jump_locations	coc.txt	/*g:coc_jump_locations*
 g:coc_last_float_win	coc.txt	/*g:coc_last_float_win*
 g:coc_last_hover_message	coc.txt	/*g:coc_last_hover_message*
+g:coc_markdown_disabled_languages	coc.txt	/*g:coc_markdown_disabled_languages*
 g:coc_node_args	coc.txt	/*g:coc_node_args*
 g:coc_node_path	coc.txt	/*g:coc_node_path*
 g:coc_process_pid	coc.txt	/*g:coc_process_pid*

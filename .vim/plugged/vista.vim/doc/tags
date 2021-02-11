@@ -6,6 +6,7 @@ g:vista#renderer#ctags	vista.txt	/*g:vista#renderer#ctags*
 g:vista#renderer#enable_icon	vista.txt	/*g:vista#renderer#enable_icon*
 g:vista#renderer#icons	vista.txt	/*g:vista#renderer#icons*
 g:vista_blink	vista.txt	/*g:vista_blink*
+g:vista_close_on_fzf_select	vista.txt	/*g:vista_close_on_fzf_select*
 g:vista_close_on_jump	vista.txt	/*g:vista_close_on_jump*
 g:vista_ctags_cmd	vista.txt	/*g:vista_ctags_cmd*
 g:vista_ctags_executable	vista.txt	/*g:vista_ctags_executable*
@@ -15,6 +16,7 @@ g:vista_default_executive	vista.txt	/*g:vista_default_executive*
 g:vista_disable_statusline	vista.txt	/*g:vista_disable_statusline*
 g:vista_echo_cursor	vista.txt	/*g:vista_echo_cursor*
 g:vista_echo_cursor_strategy	vista.txt	/*g:vista_echo_cursor_strategy*
+g:vista_enable_centering_jump	vista.txt	/*g:vista_enable_centering_jump*
 g:vista_enable_markdown_extension	vista.txt	/*g:vista_enable_markdown_extension*
 g:vista_executive_for	vista.txt	/*g:vista_executive_for*
 g:vista_finder_alternative_executives	vista.txt	/*g:vista_finder_alternative_executives*
@@ -29,6 +31,7 @@ g:vista_keep_fzf_colors	vista.txt	/*g:vista_keep_fzf_colors*
 g:vista_log_file	vista.txt	/*g:vista_log_file*
 g:vista_no_mappings	vista.txt	/*g:vista_no_mappings*
 g:vista_sidebar_keepalt	vista.txt	/*g:vista_sidebar_keepalt*
+g:vista_sidebar_open_cmd	vista.txt	/*g:vista_sidebar_open_cmd*
 g:vista_sidebar_position	vista.txt	/*g:vista_sidebar_position*
 g:vista_sidebar_width	vista.txt	/*g:vista_sidebar_width*
 g:vista_stay_on_open	vista.txt	/*g:vista_stay_on_open*

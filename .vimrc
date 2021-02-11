@@ -8,7 +8,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'"
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'preservim/nerdtree'
+Plugin 'SirVer/ultisnips'
 call vundle#end()           
+
 filetype plugin indent on   
 
 call plug#begin()
@@ -18,6 +20,10 @@ Plug 'pineapplegiant/spaceduck'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'HugoNikanor/vim-breakpoint'
 call plug#end()
+
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " Executive used when opening vista sidebar without specifying it.
 " See all the avaliable executives via `:echo g:vista#executives`.
@@ -83,6 +89,7 @@ autocmd FileType python command -buffer W write | !python %
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-n> :tabnew<CR>
 nnoremap <C-u> :u<CR>
 nnoremap <S-m> :!g++ -std=c++11 -O2 -Wall "%" -o "%.out"<CR>
 nnoremap <S-k> :!./"%.out"<CR>
@@ -101,6 +108,11 @@ inoremap <C-v> <ESC>"+pa
 inoremap <A-j> <Esc>:m+<CR>==gi
 inoremap <A-k> <Esc>:m-2<CR>==gi
 inoremap jj <esc>
+inoremap .=<tab> •
+inoremap :"D<tab> 😂
+inoremap <3<tab> ♥
+inoremap _midf<tab> 🖕
+inoremap _nice<tab> 👌
 
 vnoremap <C-c> "+y
 vnoremap <C-d> "+d

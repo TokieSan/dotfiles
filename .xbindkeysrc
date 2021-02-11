@@ -119,6 +119,9 @@
 "keepassxc"
 	Control + Shift + c
 
+"emoji-keyboard"
+	Control + Alt + f
+
 "mpv $(xclip -o)"
 	Control + Shift + y 
 
