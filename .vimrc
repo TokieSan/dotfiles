@@ -19,12 +19,13 @@ Plug 'liuchengxu/vista.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'HugoNikanor/vim-breakpoint'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
+let g:livepreview_previewer = 'evince'
 " Executive used when opening vista sidebar without specifying it.
 " See all the avaliable executives via `:echo g:vista#executives`.
 let g:vista_default_executive = 'ctags'
@@ -78,6 +79,11 @@ set updatetime=300
 "#set colorcolumn=
 highlight LineNr ctermfg=lightgreen ctermbg=233
 
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
 augroup project
   autocmd!
   autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
@@ -86,13 +92,18 @@ set mouse=a
 
 autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
+autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=% % 
+autocmd FileType cpp,h command -buffer W write | !g++ -std=c++11 -O2 -Wall "%" -o "%.out"
+
+autocmd FileType cpp,h command -buffer M write | !./"%.out"
+autocmd FileType tex,texmath command -buffer M write | LLPStartPreview
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-n> :tabnew<CR>
 nnoremap <C-u> :u<CR>
-nnoremap <S-m> :!g++ -std=c++11 -O2 -Wall "%" -o "%.out"<CR>
-nnoremap <S-k> :!./"%.out"<CR>
+nnoremap <S-m> :W<CR>
+nnoremap <S-k> :M<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <S-w> :w<CR>
 nnoremap <S-q> :q<CR>

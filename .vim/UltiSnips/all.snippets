@@ -1,0 +1,184 @@
+# main things
+
+snippet sign "Signature"
+Yours sincerely,
+
+Ahmed Gamal Eltokhy
+endsnippet
+
+snippet today "Date"
+`date +%F`
+endsnippet
+
+snippet me "my name"
+Ahmed Gamal Eltokhy
+endsnippet
+
+snippet snip "snippet"
+snippet $1 "$2"
+$0
+endsnippe$3
+endsnippet
+
+# LaTeX Stuff
+
+snippet texfirst "first page of latex"
+\title{$1}
+\date{`date +"%a, %d %b. %Y"`}
+\author{Ahmed Gamal Eltokhy}
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\pagenumbering{arabic}
+
+$0
+
+\end{document}
+endsnippet
+
+snippet tex "base for tex files" 
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+endsnippet
+
+snippet eqn "fast equation"
+\[
+	$1
+\]
+$0
+endsnippet
+
+snippet beg "begin and end"
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet title "title"
+\title{$1}
+\maketitle
+endsnippet
+
+snippet sec "section"
+\section{$1}
+
+$0
+endsnippet
+
+snippet ssec "subsection"
+\subsection{$1}
+
+$0
+endsnippet
+snippet par "paragraph"
+\paragraph{$1}
+$0
+endsnippet
+
+snippet spar "subparagraph"
+\subparagraph{$1}
+$0
+endsnippet
+
+snippet $ "inline"
+$ $1 $ $0
+endsnippet
+
+snippet integral "integrals"
+\int^$1_$2 
+endsnippet
+
+snippet frac "fraction"
+\frac{ $1 }{ $2 }
+endsnippet
+
+snippet vec "vectors"
+\vec{ $1 }
+endsnippet
+
+snippet sin "sine"
+\sin{ $1 } $0
+endsnippet
+
+snippet cos "cosine"
+\cos{ $1 } $0
+endsnippet
+
+snippet tan "tan"
+\tan{ $1 } $0
+endsnippet
+
+snippet sqrt "square root"
+\sqrt{ $1 }
+endsnippet
+
+snippet left "left right"
+\left$1 $0 \right$2
+endsnippet
+
+snippet mat "matrix"
+\left [
+\begin{matrix}
+	$1
+\end{matrix}
+\right]
+$0
+endsnippet
+snippet hr "line"
+
+\noindent\hrulefill 
+
+$0
+endsnippet
+
+snippet parbox "paragraph box"
+\barbox{\texwidth}{
+$1
+}
+$0
+endsnippet
+
+snippet picpkg "package for graphics"
+\usepackage{graphicx}
+\usepackage{subcaption}
+endsnippet
+
+snippet minipage "minipage"
+\begin{minipage}{\linewidth}
+	$0
+\end{minipage}
+endsnippet
+
+snippet figure "figure"
+\begin{$1}[h!]
+\includegraphics[width=\linewidth]{$2}
+	\caption{$3}
+\end{$1}
+endsnippet
+
+snippet sfigure "Subfigure"
+\begin{figure}[h!]
+	\begin{subfigure}[$5][$1\linewidth]
+		\includegraphics[width=\linewidth]{$2}
+		\caption{$3}
+		\label{$4}
+	\end{subfigure}
+	$0
+\end{figure}
+endsnippet
+
+snippet sfig "subfigure mini"
+	\begin{subfigure}[$5][$1\linewidth]
+		\includegraphics[width=\linewidth]{$2}
+		\caption{$3}
+		\label{$4}
+	\end{subfigure}
+	$0
+endsnippet
+
+
