@@ -27,6 +27,12 @@ snippet texfirst "first page of latex"
 \date{`date +"%a, %d %b. %Y"`}
 \author{Ahmed Gamal Eltokhy}
 
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+
 \begin{document}
 \maketitle
 \pagenumbering{gobble}
@@ -38,6 +44,51 @@ $0
 \end{document}
 endsnippet
 
+snippet codefirst "code start" b
+\title{Fundamentals of Computing II Notes}
+\date{Sat, 13 Feb. 2021}
+\author{Ahmed Gamal Eltokhy}
+
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{color}
+
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\pagenumbering{arabic}
+
+$0
+
+\end{document}
+endsnippet
+
+snippet code "code box"
+\begin{lstlisting}
+	$0
+\end{lstlisting}
+endsnippet
+
 snippet tex "base for tex files" 
 \documentclass{article}
 
@@ -46,11 +97,28 @@ snippet tex "base for tex files"
 
 endsnippet
 
-snippet eqn "fast equation"
+snippet eqn "fast equation" wA
 \[
 	$1
 \]
 $0
+endsnippet
+
+snippet enum "enumerate"
+\begin{enumerate}[1.]
+	\item $0
+\end{enumerate}
+endsnippet
+
+snippet item "item"
+\item $0
+endsnippet
+snippet '([A-Za-z])(\d)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+endsnippet
+
+snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
 snippet beg "begin and end"
@@ -93,10 +161,21 @@ snippet integral "integrals"
 \int^$1_$2 
 endsnippet
 
-snippet frac "fraction"
-\frac{ $1 }{ $2 }
+snippet // "fraction"
+\frac{ $1 }{ $2 } $0
 endsnippet
 
+snippet / "Fraction" 
+\\frac{${VISUAL}}{$1}$0
+endsnippet
+
+snippet == "equals" iA
+&= $1 \\\\
+endsnippet
+
+snippet != "equals" iA
+\neq 
+endsnippet
 snippet vec "vectors"
 \vec{ $1 }
 endsnippet
@@ -143,6 +222,14 @@ $1
 $0
 endsnippet
 
+snippet bold "bold text"
+\textbf{$1} $0
+endsnippet
+
+snippet ital "italic text"
+\textit{$1} $0
+endsnippet
+
 snippet picpkg "package for graphics"
 \usepackage{graphicx}
 \usepackage{subcaption}
@@ -154,11 +241,13 @@ snippet minipage "minipage"
 \end{minipage}
 endsnippet
 
-snippet figure "figure"
-\begin{$1}[h!]
-\includegraphics[width=\linewidth]{$2}
-	\caption{$3}
-\end{$1}
+snippet fig "Figure environment" b
+\begin{figure}[${1:htpb}]
+	\centering
+	${2:\includegraphics[width=0.8\textwidth]{$3}}
+	\caption{${4:$3}}
+	\label{fig:${5:${3/\W+/-/g}}}
+\end{figure}
 endsnippet
 
 snippet sfigure "Subfigure"
@@ -179,6 +268,14 @@ snippet sfig "subfigure mini"
 		\label{$4}
 	\end{subfigure}
 	$0
+endsnippet
+
+snippet => "implies" Ai
+\implies
+endsnippet
+
+snippet =< "implied by" Ai
+\impliedby
 endsnippet
 
 
