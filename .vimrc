@@ -79,6 +79,8 @@ set updatetime=300
 "#set colorcolumn=
 highlight LineNr ctermfg=lightgreen ctermbg=233
 
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
