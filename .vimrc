@@ -19,8 +19,20 @@ Plug 'liuchengxu/vista.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'HugoNikanor/vim-breakpoint'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'shime/vim-livedown'
 call plug#end()
+
+" should markdown preview get shown automatically upon opening markdown buffer
+ let g:livedown_autorun = 1
+
+" should the browser window pop-up upon previewing
+ let g:livedown_open = 1
+
+" the port on which Livedown server will run
+" let g:livedown_port = 1337
+
+" the browser to use, can also be firefox, chrome or other, depending on your executable
+" let g:livedown_browser = "safari"
 
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
@@ -96,9 +108,12 @@ autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
 autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=% % 
 autocmd FileType cpp,h command -buffer W write | !g++ -std=c++11 -O2 -Wall "%" -o "%.out"
+autocmd FileType md,markdown command -buffer W write | LivedownPreview
+
 
 autocmd FileType cpp,h command -buffer M write | !./"%.out"
 autocmd FileType tex,texmath command -buffer M write | LLPStartPreview
+autocmd FileType md,markdown command -buffer M write | LivedownToggle
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
