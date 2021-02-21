@@ -20,24 +20,27 @@ Plug 'pineapplegiant/spaceduck'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'HugoNikanor/vim-breakpoint'
 Plug 'shime/vim-livedown'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 " should markdown preview get shown automatically upon opening markdown buffer
  let g:livedown_autorun = 1
-
 " should the browser window pop-up upon previewing
  let g:livedown_open = 1
-
 " the port on which Livedown server will run
 " let g:livedown_port = 1337
-
 " the browser to use, can also be firefox, chrome or other, depending on your executable
 " let g:livedown_browser = "safari"
 
+autocmd BufRead,BufNewFile   *.txt,*.md,*.tex setlocal spell spelllang=en_us
+
+let g:UltiSnipsSnippetDirectories=$HOME.'/.vim/UltiSnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 let g:livepreview_previewer = 'evince'
+
 " Executive used when opening vista sidebar without specifying it.
 " See all the avaliable executives via `:echo g:vista#executives`.
 let g:vista_default_executive = 'ctags'
@@ -106,12 +109,12 @@ set mouse=a
 
 autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
-autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=% % 
-autocmd FileType cpp,h command -buffer W write | !g++ -std=c++11 -O2 -Wall "%" -o "%.out"
+autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=%:r % 
+autocmd FileType cpp,h command -buffer W write | !g++ -std=c++11 -O2 -Wall "%" -o "%:r.out"
 autocmd FileType md,markdown command -buffer W write | LivedownPreview
 
 
-autocmd FileType cpp,h command -buffer M write | !./"%.out"
+autocmd FileType cpp,h command -buffer M write | !./"%:r.out"
 autocmd FileType tex,texmath command -buffer M write | LLPStartPreview
 autocmd FileType md,markdown command -buffer M write | LivedownToggle
 
@@ -131,7 +134,9 @@ nnoremap <A-j> :m+<CR>==
 nnoremap <A-k> :m-2<CR>==
 nnoremap <S-z> z=
 nnoremap <S-p> :BreakpointToggle<CR>
+nnoremap <c-f> [s1z=<c-o>
 
+inoremap <c-f> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-v> <ESC>"+pa
 inoremap <A-j> <Esc>:m+<CR>==gi
 inoremap <A-k> <Esc>:m-2<CR>==gi
