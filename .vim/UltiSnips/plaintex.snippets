@@ -10,6 +10,7 @@ snippet TEX "first page of latex"
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{tikz}
 
 \begin{document}
 
@@ -74,10 +75,20 @@ $0
 \end{document}
 endsnippet
 
+snippet tikz "tikzpic"
+\begin{tikzpicture}
+	$0
+\end{tikzpicture}
+endsnippet
+
 snippet code "code box"
 \begin{lstlisting}
 	$0
 \end{lstlisting}
+endsnippet
+
+snippet theta "theta" A
+\theta
 endsnippet
 
 snippet eqn "fast equation" wA
@@ -93,9 +104,25 @@ snippet enum "enumerate"
 \end{enumerate}
 endsnippet
 
+snippet grid "grid"
+\draw[step=1cm,gray,very thin] ($1,$1) grid ($2,$2);
+$0
+endsnippet
+
+snippet circl "circl"
+\draw ($1,$1) circle ($2cm);
+$0
+endsnippet
+
+snippet arrow "arrow"
+\draw[thick,->] ($1,$2) -- ($3,$4) {$5};
+$0
+endsnippet
+
 snippet item "item"
 \item $0
 endsnippet
+
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
