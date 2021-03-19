@@ -80,9 +80,6 @@
 "flameshot gui"
 	Print
 
-"falmeshot full -p /home/elt0khy/Pictures/scr/"
-	Shift + Print
-
 "systemctl suspend"
 	Control + Alt + l
 
@@ -128,3 +125,8 @@
 "bluedevil-wizard"
 	Shift + F11
 
+"feh /home/elt0khy/Documents/fuckoff.png"
+	XF86PowerOff
+
+"flameshot full --path /home/elt0khy/Documents/scr/"
+	Super_L

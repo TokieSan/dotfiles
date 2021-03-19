@@ -4,6 +4,8 @@ Width 1920=1918
 
 [Desktop Entry]
 FullScreen=false
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
 
 [MainWindow]
 DP-2 HDMI-0 Height 1080=1057
@@ -17,32 +19,32 @@ DP-2 Height 1920x1080=1057
 DP-2 Width 1920=1918
 DP-2 Width 1920x1080=1918
 DP-2 XPosition=0
-DP-2 XPosition 1920x1080=1
+DP-2 XPosition 1920x1080=79
 DP-2 YPosition=21
-DP-2 YPosition 1920x1080=22
+DP-2 YPosition 1920x1080=21
 Height 1080=1057
 State=AAAA/wAAAAD9AAAAAAAAB34AAAO5AAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1920=1918
 
 [Recent Files]
-File1[$e]=$HOME/shared/study/extra/core/On Identity.pdf
-File10[$e]=$HOME/shared/study/math/calc2/notes/notes.pdf
-File2[$e]=$HOME/shared/study/extra/core/rj1.tex.pdf
-File3[$e]=$HOME/shared/study/phys/1/testbank.pdf
-File4[$e]=$HOME/shared/study/phys/1/Syllabus.pdf
-File5[$e]=$HOME/shared/study/phys/1/notes/notes.pdf
-File6[$e]=$HOME/shared/study/extra/rhet/1010/Amin Maalouf, On Identity.pdf
-File7[$e]=$HOME/shared/study/cs/archive/CSCE 1001/assignments/Assignment 4/Assignment 4 (Loops).pdf
-File8[$e]=$HOME/shared/study/math/calc2/syllabus.pdf
-File9[$e]=$HOME/shared/study/math/calc2/textbook.pdf
-Name1[$e]=On Identity.pdf
-Name10[$e]=notes.pdf
-Name2[$e]=rj1.tex.pdf
-Name3[$e]=testbank.pdf
-Name4[$e]=Syllabus.pdf
-Name5[$e]=notes.pdf
-Name6[$e]=Amin Maalouf, On Identity.pdf
-Name7[$e]=Assignment 4 (Loops).pdf
-Name8[$e]=syllabus.pdf
-Name9[$e]=textbook.pdf
+File1[$e]=$HOME/shared/lib/Domace/Crnjanski/crnjanski_seobe.pdf
+File10[$e]=$HOME/shared/study/math/calc2/syllabus.pdf
+File2[$e]=$HOME/shared/lib/Economy/Neoliberalism/brief history of neoliberalism.pdf
+File3[$e]=$HOME/shared/study/cs/cs2/notes/notes.pdf
+File4[$e]=$HOME/Downloads/Simulation proj part 2-1-merged.pdf
+File5[$e]=$HOME/shared/study/cs/cs2/A2_AhmedEltokhy/A1P1_AhmedEltokhy_UML.pdf
+File6[$e]=$HOME/shared/study/math/calc2/notes/cheatSheet.pdf
+File7[$e]=$HOME/shared/study/math/calc2/notes/notes.pdf
+File8[$e]=$HOME/shared/study/math/calc2/textbook.pdf
+File9[$e]=$HOME/shared/study/math/calc2/cheatSheet/CheatSheet/cheatSheet.pdf
+Name1[$e]=crnjanski_seobe.pdf
+Name10[$e]=syllabus.pdf
+Name2[$e]=brief history of neoliberalism.pdf
+Name3[$e]=notes.pdf
+Name4[$e]=Simulation proj part 2-1-merged.pdf
+Name5[$e]=A1P1_AhmedEltokhy_UML.pdf
+Name6[$e]=cheatSheet.pdf
+Name7[$e]=notes.pdf
+Name8[$e]=textbook.pdf
+Name9[$e]=cheatSheet.pdf

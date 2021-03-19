@@ -153,6 +153,13 @@ snippet ssec "subsection"
 
 $0
 endsnippet
+
+snippet sssec "subsubsection"
+\subsubsection{$1}
+
+$0
+endsnippet
+
 snippet par "paragraph"
 \paragraph{$1}
 $0
@@ -167,8 +174,8 @@ snippet $ "inline"
 $ $1 $ $0
 endsnippet
 
-snippet integral "integrals"
-\int^$1_$2 
+snippet int "integrals"
+\int^{$1}_{$2} $3 dx $0 
 endsnippet
 
 snippet // "fraction"
@@ -207,7 +214,7 @@ snippet sqrt "square root"
 endsnippet
 
 snippet left "left right"
-\left$1 $0 \right$2
+\left[ $0 \right]
 endsnippet
 
 snippet mat "matrix"
@@ -325,4 +332,112 @@ $0
 \end{document}
 endsnippet
 
+snippet cheatSheet "cheat sheet template"
+\documentclass[11pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx}
+\usepackage{hyperref}
 
+
+\pdfinfo{
+  /Title (cheatsheet.pdf)
+  /Creator (TeX)
+  /Producer (pdfTeX 2.40.0)
+  /Author (Tokhy)
+  /Subject (CHEATSHEET)
+  /Keywords (pdflatex, latex,pdftex,tex)}
+
+% This sets page margins to .6 inch if using letter paper, and to 1cm
+% if using A5 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 2cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 12in}}
+    { \geometry{top=.6in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 298mm}}
+        {\geometry{top=2cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=2cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{2}{0mm}%
+                                {0ex plus -.5ex minus -.2ex}%
+                                {1.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{3}{0mm}%
+                                {0explus -.5ex minus -.2ex}%
+                                {1.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{4}{0mm}%
+                                {0ex plus -.5ex minus -.2ex}%
+                                {2ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.06em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1668em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{1}
+
+
+\setlength{\parindent}{1pt}
+\setlength{\parskip}{1pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{4}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{1.25pt}
+\setlength{\premulticols}{2pt}
+\setlength{\postmulticols}{2pt}
+\setlength{\multicolsep}{2pt}
+\setlength{\columnsep}{3pt}
+
+\section{Section 1}
+Text
+\subsection{xCode}
+Subsetction text
+
+% You can even have references
+\rule{0.3\linewidth}{0.25pt}
+\scriptsize
+\bibliographystyle{abstract}
+\bibliography{refFile}
+\end{multicols}
+\end{document}
+endsnippet
+
+snippet triangle "Triangle"
+
+\begin{tikzpicture}
+\draw (0,0) 
+   -- (4,0) node[midway,below] {$a$}
+   -- (4,4) node[midway,right] {$b$}
+   -- (0,0) node[midway,left] {$c$};
+\end{tikzpicture}
+
+endsnippet
+
+snippet <= "leq" A
+	\leq $0
+endsnippet
+
+snippet >= "geq" A
+	\geq $0
+endsnippet

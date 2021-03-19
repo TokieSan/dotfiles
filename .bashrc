@@ -15,7 +15,7 @@ alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 
 (cat ~/.cache/wal/sequences &)
 
-
+set GTK_USE_PORTAL=1 
 export QT_QPA_PLATFORMTHEME=qt5ct
 # PS1='[\u@\h \W]\$ '
 
