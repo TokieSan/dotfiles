@@ -111,8 +111,8 @@ autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
 autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=%:r % 
 autocmd FileType cpp,h command -buffer W write | !g++ -std=c++11 -O2 -Wall "%" -o "%:r.out"
-autocmd FileType md,markdown command -buffer W write | LivedownPreview
 autocmd FileType md,markdown autocmd TextChanged,TextChangedI <buffer> silent write
+autocmd FileType md,markdown command -buffer W write | LivedownPreview
 
 autocmd FileType cpp,h command -buffer M write | !./"%:r.out"
 autocmd FileType tex,texmath command -buffer M write | LLPStartPreview

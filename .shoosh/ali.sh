@@ -58,6 +58,9 @@ op(){
 		phys)
 			"ranger" "/home/elt0khy/shared/study/phys/1"
 			;;
+		scr)
+			"ranger" "/home/elt0khy/Documents/scr"
+			;;
 		*)
 			"ranger" "/home/elt0khy/shared/${1}"
 			;;

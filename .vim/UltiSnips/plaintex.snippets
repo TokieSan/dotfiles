@@ -44,20 +44,20 @@ snippet TEXcode "code start"
 
 
 \lstset{frame=tb,
-  language=Java,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
 }
 
 \begin{document}
@@ -77,13 +77,13 @@ endsnippet
 
 snippet tikz "tikzpic"
 \begin{tikzpicture}
-	$0
+$0
 \end{tikzpicture}
 endsnippet
 
 snippet code "code box"
 \begin{lstlisting}
-	$0
+$0
 \end{lstlisting}
 endsnippet
 
@@ -100,7 +100,7 @@ endsnippet
 
 snippet enum "enumerate"
 \begin{enumerate}[1.]
-	\item $0
+\item $0
 \end{enumerate}
 endsnippet
 
@@ -133,7 +133,7 @@ endsnippet
 
 snippet beg "begin and end"
 \begin{$1}
-	$0
+$0
 \end{$1}
 endsnippet
 
@@ -152,6 +152,10 @@ snippet ssec "subsection"
 \subsection{$1}
 
 $0
+endsnippet
+
+snippet -> "to" A
+\to $0
 endsnippet
 
 snippet sssec "subsubsection"
@@ -176,6 +180,14 @@ endsnippet
 
 snippet int "integrals"
 \int^{$1}_{$2} $3 dx $0 
+endsnippet
+
+snippet lim "limits"
+\lim_{$1 \to $2} $0
+endsnippet
+
+snippet txt "text" A
+\text{$1} $0
 endsnippet
 
 snippet // "fraction"
@@ -204,7 +216,6 @@ endsnippet
 snippet cos "cosine"
 \cos{ $1 } $0
 endsnippet
-
 snippet tan "tan"
 \tan{ $1 } $0
 endsnippet
@@ -219,11 +230,11 @@ endsnippet
 
 snippet mat "matrix"
 \left [
-\begin{matrix}
+	\begin{matrix}
 	$1
-\end{matrix}
-\right]
-$0
+	\end{matrix}
+	\right]
+	$0
 endsnippet
 snippet hr "line"
 
@@ -262,37 +273,37 @@ endsnippet
 
 snippet minipage "minipage"
 \begin{minipage}{\linewidth}
-	$0
+$0
 \end{minipage}
 endsnippet
 
 snippet fig "Figure environment" b
 \begin{figure}[${1:htpb}]
-	\centering
-	${2:\includegraphics[width=0.8\textwidth]{$3}}
-	\caption{${4:$3}}
-	\label{fig:${5:${3/\W+/-/g}}}
+\centering
+${2:\includegraphics[width=0.8\textwidth]{$3}}
+\caption{${4:$3}}
+\label{fig:${5:${3/\W+/-/g}}}
 \end{figure}
 endsnippet
 
 snippet sfigure "Subfigure"
 \begin{figure}[h!]
-	\begin{subfigure}[$5]{$1\linewidth}
-		\includegraphics[width=\linewidth]{$2}
-		\caption{$3}
-		\label{$4}
-	\end{subfigure}
-	$0
+\begin{subfigure}[$5]{$1\linewidth}
+\includegraphics[width=\linewidth]{$2}
+\caption{$3}
+\label{$4}
+\end{subfigure}
+$0
 \end{figure}
 endsnippet
 
 snippet sfig "subfigure mini"
-	\begin{subfigure}[$5][$1\linewidth]
-	\includegraphics[width=\linewidth]{$2}
-		\caption{$3}
-		\label{$4}
-	\end{subfigure}
-	$0
+\begin{subfigure}[$5][$1\linewidth]
+\includegraphics[width=\linewidth]{$2}
+\caption{$3}
+\label{$4}
+\end{subfigure}
+$0
 endsnippet
 
 snippet => "implies" Ai
@@ -344,22 +355,22 @@ snippet cheatSheet "cheat sheet template"
 
 
 \pdfinfo{
-  /Title (cheatsheet.pdf)
-  /Creator (TeX)
-  /Producer (pdfTeX 2.40.0)
-  /Author (Tokhy)
-  /Subject (CHEATSHEET)
-  /Keywords (pdflatex, latex,pdftex,tex)}
+	/Title (cheatsheet.pdf)
+		/Creator (TeX)
+		/Producer (pdfTeX 2.40.0)
+		/Author (Tokhy)
+		/Subject (CHEATSHEET)
+		/Keywords (pdflatex, latex,pdftex,tex)}
 
-% This sets page margins to .6 inch if using letter paper, and to 1cm
-% if using A5 paper. (This probably isn't strictly necessary.)
-% If using another size paper, use default 2cm margins.
-\ifthenelse{\lengthtest { \paperwidth = 12in}}
-    { \geometry{top=.6in,left=.5in,right=.5in,bottom=.5in} }
-    {\ifthenelse{ \lengthtest{ \paperwidth = 298mm}}
-        {\geometry{top=2cm,left=1cm,right=1cm,bottom=1cm} }
-        {\geometry{top=2cm,left=1cm,right=1cm,bottom=1cm} }
-    }
+		% This sets page margins to .6 inch if using letter paper, and to 1cm
+		% if using A5 paper. (This probably isn't strictly necessary.)
+		% If using another size paper, use default 2cm margins.
+		\ifthenelse{\lengthtest { \paperwidth = 12in}}
+{ \geometry{top=.6in,left=.5in,right=.5in,bottom=.5in} }
+{\ifthenelse{ \lengthtest{ \paperwidth = 298mm}}
+	{\geometry{top=2cm,left=1cm,right=1cm,bottom=1cm} }
+	{\geometry{top=2cm,left=1cm,right=1cm,bottom=1cm} }
+}
 
 % Turn off header and footer
 \pagestyle{empty}
@@ -367,77 +378,77 @@ snippet cheatSheet "cheat sheet template"
 % Redefine section commands to use less space
 \makeatletter
 \renewcommand{\section}{\@startsection{section}{2}{0mm}%
-                                {0ex plus -.5ex minus -.2ex}%
-                                {1.5ex plus .2ex}%x
-                                {\normalfont\large\bfseries}}
-\renewcommand{\subsection}{\@startsection{subsection}{3}{0mm}%
-                                {0explus -.5ex minus -.2ex}%
-                                {1.5ex plus .2ex}%
-                                {\normalfont\normalsize\bfseries}}
-\renewcommand{\subsubsection}{\@startsection{subsubsection}{4}{0mm}%
-                                {0ex plus -.5ex minus -.2ex}%
-                                {2ex plus .2ex}%
-                                {\normalfont\small\bfseries}}
-\makeatother
+	{0ex plus -.5ex minus -.2ex}%
+	{1.5ex plus .2ex}%x
+	{\normalfont\large\bfseries}}
+	\renewcommand{\subsection}{\@startsection{subsection}{3}{0mm}%
+		{0explus -.5ex minus -.2ex}%
+		{1.5ex plus .2ex}%
+		{\normalfont\normalsize\bfseries}}
+		\renewcommand{\subsubsection}{\@startsection{subsubsection}{4}{0mm}%
+			{0ex plus -.5ex minus -.2ex}%
+			{2ex plus .2ex}%
+			{\normalfont\small\bfseries}}
+			\makeatother
 
-% Define BibTeX command
-\def\BibTeX{{\rm B\kern-.06em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1668em\lower.7ex\hbox{E}\kern-.125emX}}
+			% Define BibTeX command
+			\def\BibTeX{{\rm B\kern-.06em{\sc i\kern-.025em b}\kern-.08em
+				T\kern-.1668em\lower.7ex\hbox{E}\kern-.125emX}}
 
-% Don't print section numbers
-\setcounter{secnumdepth}{1}
-
-
-\setlength{\parindent}{1pt}
-\setlength{\parskip}{1pt plus 0.5ex}
-
-%My Environments
-\newtheorem{example}[section]{Example}
-% -----------------------------------------------------------------------
-
-\begin{document}
-\raggedright
-\footnotesize
-\begin{multicols}{4}
+				% Don't print section numbers
+				\setcounter{secnumdepth}{1}
 
 
-% multicol parameters
-% These lengths are set only within the two main columns
-%\setlength{\columnseprule}{1.25pt}
-\setlength{\premulticols}{2pt}
-\setlength{\postmulticols}{2pt}
-\setlength{\multicolsep}{2pt}
-\setlength{\columnsep}{3pt}
+				\setlength{\parindent}{1pt}
+				\setlength{\parskip}{1pt plus 0.5ex}
 
-\section{Section 1}
-Text
-\subsection{xCode}
-Subsetction text
+				%My Environments
+				\newtheorem{example}[section]{Example}
+				% -----------------------------------------------------------------------
 
-% You can even have references
-\rule{0.3\linewidth}{0.25pt}
-\scriptsize
-\bibliographystyle{abstract}
-\bibliography{refFile}
-\end{multicols}
-\end{document}
-endsnippet
+				\begin{document}
+				\raggedright
+				\footnotesize
+				\begin{multicols}{4}
 
-snippet triangle "Triangle"
 
-\begin{tikzpicture}
+				% multicol parameters
+				% These lengths are set only within the two main columns
+				%\setlength{\columnseprule}{1.25pt}
+				\setlength{\premulticols}{2pt}
+				\setlength{\postmulticols}{2pt}
+				\setlength{\multicolsep}{2pt}
+				\setlength{\columnsep}{3pt}
+
+				\section{Section 1}
+				Text
+				\subsection{xCode}
+				Subsetction text
+
+				% You can even have references
+				\rule{0.3\linewidth}{0.25pt}
+				\scriptsize
+				\bibliographystyle{abstract}
+				\bibliography{refFile}
+				\end{multicols}
+				\end{document}
+				endsnippet
+
+				snippet triangle "Triangle"
+
+				\begin{tikzpicture}
 \draw (0,0) 
-   -- (4,0) node[midway,below] {$a$}
-   -- (4,4) node[midway,right] {$b$}
-   -- (0,0) node[midway,left] {$c$};
+	-- (4,0) node[midway,below] {$a$}
+	-- (4,4) node[midway,right] {$b$}
+	-- (0,0) node[midway,left] {$c$};
 \end{tikzpicture}
 
 endsnippet
 
 snippet <= "leq" A
-	\leq $0
+\leq $0
 endsnippet
 
 snippet >= "geq" A
-	\geq $0
+\geq $0
 endsnippet
