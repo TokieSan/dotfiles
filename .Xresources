@@ -1,4 +1,4 @@
-xterm*Background: #121414
+xterm*Background: #000000
 XTerm.vt100.reverseVideo: true
 XTerm.vt100.faceName: Ubuntu Mono:size=16:antialias=false
 XTerm.vt100.font: 7x13
@@ -17,3 +17,46 @@ URxvt.keysym.C-S-Up:   font-size:incglobal
 URxvt.keysym.C-S-Down: font-size:decglobal
 URxvt.keysym.C-equal:  font-size:reset
 URxvt.keysym.C-slash:  font-size:show
+! special
+URxvt.foreground:   #ffffff
+URxvt.background:   #000000
+URxvt.cursorColor:  #ffffff
+
+! black
+URxvt.color0:       #000000
+URxvt.color8:       #1e1e1e
+
+! red
+URxvt.color1:       #db2d20
+URxvt.color9:       #db2d20
+
+! green
+URxvt.color2:       #24d1ac
+URxvt.color10:      #2ae4bd
+
+! yellow
+URxvt.color3:       #24d1ac
+URxvt.color11:      #2ae4bd
+
+! blue
+URxvt.color4:       #24d1ac
+URxvt.color12:      #01cde4
+
+! magenta
+URxvt.color5:       #24d1ac
+URxvt.color13:      #a16a94
+
+! cyan
+URxvt.color6:       #24d1ae
+URxvt.color14:      #b5e4f4
+
+! white
+URxvt.color7:       #ffffff
+URxvt.color15:      #f7f7f7
+
+URxvt*foreground:   #ffffff
+URxvt*background:	#000000
+
+URxvt*cursorColor:  #c0c0c0
+
+

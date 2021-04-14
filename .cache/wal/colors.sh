@@ -3,9 +3,9 @@
 wallpaper='/home/elt0khy/Documents/Random GIMP/Arch Background2.png'
 
 # Special
-background='#0b0c0c'
-foreground='#c0c0c0'
-cursor='#c0c0c0'
+background='#000000'
+foreground='#ffffff'
+cursor='#ffffff'
 
 # Colors
 color0='#0b0c0c'
