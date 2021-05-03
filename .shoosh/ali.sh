@@ -18,6 +18,7 @@ alias quitX='pkill -15 Xorg'
 alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
 alias ll='ls -all'
 alias df='df -h'
+alias deemix='deemix --bitrate FLAC -p .'
 getAudio() {
 	ffmpeg -i "${1}" -vn -q:a 0 "${1}".ogg
 }
