@@ -1,3 +1,5 @@
+. /home/elt0khy/.shoosh/private.sh
+
 alias fucking='sudo'
 alias pls='sudo "$BASH" -c "$(history -p !!)"'
 alias viminstall='vim +PluginInstall'
@@ -72,7 +74,6 @@ compress(){
 	"cp" "${1}" "old-${1}"
 	convert ${1} -quality ${3}% -resize ${2}\> ${1} 
 }
-alias vi='nvim'
 alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
 alias sexkb='setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle'
@@ -80,5 +81,7 @@ alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --dele
 dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video2; }
 alias sv='sudo vim'
 alias tunnelfast='sudo sshuttle --method=tproxy --remote=eltokhy@52.188.119.232 0.0.0.0/0 ::/0 --exclude=213.181.225.44 --exclude=52.188.119.232'
-alias fastHotspot='nmcli wlan0 wifi hotspot ifname wlp4s0 ssid GNUHotspot password 8888#8888'
+fastHotspot() { nmcli dev wifi hotspot ifname wlan0 ssid GNUHotspot password ${hotspotPwd}; }
+
+export -f fastHotspot
 alias code='codium'
