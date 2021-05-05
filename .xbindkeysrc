@@ -66,10 +66,10 @@
 	XF86MonBrightnessDown
 
 "xbacklight -set 0"
-	Shift + F5
+	Control + Shift + F5
 
 "xbacklight -set 100"
-	Shift + F6
+	Control + Shift + F6
 
 "firefox reddit.com"
 	Shift + b:9
