@@ -21,18 +21,31 @@ alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 
 alias ll='ls -all'
 alias df='df -h'
 alias deemix='deemix --bitrate FLAC -p .'
+alias harwest='~/.local/bin/harwest'
+rmtests() {
+	mv *test* ~/myBlackHole/tests/
+	rm -rf *.out
+	mv *.pdf ~/myBlackHole/pdf/
+	mv *.cpp ~/myBlackHole/cpp/
+	mv *.png ~/myBlackHole/png/
+	mv *.jpg *.jpeg ~/myBlackHole/jpg
+}
 getAudio() {
 	ffmpeg -i "${1}" -vn -q:a 0 "${1}".ogg
 }
-
-prj() {
+contestdone() {
+	mkdir ../"${1}"
+	mv * ../"${1}"/
+	rm .cph/*
+}
+comp() {
 	case ${1} in
-		comp)
-			"touch" "${2}.in" & "cp" "/home/elt0khy/.shoosh/bases/comp.cpp" "${2}.cpp" & "vim" "${2}.cpp" "+79"
+		t)
+			"cp" "/home/elt0khy/.shoosh/comp_template_testcases.cpp" "${2}.cpp" & "vim" "${2}.cpp" "+141"
 			;;
 
-		cpp)
-			"cp" "/home/elt0khy/.shoosh/bases/base.cpp" "${2}.cpp" & "vim" "${2}.cpp"
+		n)
+			"cp" "/home/elt0khy/.shoosh/comp_template.cpp" "${2}.cpp" & "vim" "${2}.cpp" "+148"
 			;;
 		*)
 			echo -n "Issue"
@@ -82,6 +95,5 @@ dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_
 alias sv='sudo vim'
 alias tunnelfast='sudo sshuttle --method=tproxy --remote=eltokhy@52.188.119.232 0.0.0.0/0 ::/0 --exclude=213.181.225.44 --exclude=52.188.119.232'
 fastHotspot() { nmcli dev wifi hotspot ifname wlan0 ssid GNUHotspot password ${hotspotPwd}; }
-
 export -f fastHotspot
 alias code='codium'

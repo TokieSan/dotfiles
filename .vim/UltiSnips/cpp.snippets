@@ -7,6 +7,7 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int,int> pi;
 typedef pair<int, int> pi;
+typedef priority_queue<int> pq;
 
 #define pb push_back
 #define V vector
@@ -73,7 +74,7 @@ T div(T &a, T &b, T &P){
 template <class T> 
 T gcd(T a, T b) {
 	if(a%b)
-		return gcd(b, a % b)
+		return gcd(b, a % b);
 	return b;
 }
 
@@ -154,6 +155,7 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int,int> pi;
 typedef pair<int, int> pi;
+typedef priority_queue<int> pq;
 
 #define pb push_back
 #define V vector
@@ -220,7 +222,7 @@ T div(T &a, T &b, T &P){
 template <class T> 
 T gcd(T a, T b) {
 	if(a%b)
-		return gcd(b, a % b)
+		return gcd(b, a % b);
 	return b;
 }
 
@@ -321,13 +323,6 @@ int main(int argc, char *argv[]) {
 
 endsnippet
 
-snippet for "for loop" A
-for(int i=$1; i<$2; i++){
-	$3
-}
-$0
-endsnippet
-
 snippet cntdig "count digits of an integer" A
 int ans=0;
 while($1!=0){
@@ -344,11 +339,4 @@ endsnippet
 
 snippet all "l"
 $1.begin(), $1.begin()+n
-endsnippet
-
-snippet rfor "reverse for loop" A
-for (int i=$1-1; i>=0; ++i){
-	$2
-}
-$0
 endsnippet
