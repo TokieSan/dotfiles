@@ -1,6 +1,0 @@
-#!/bin/sh
-# Xsetup - run as root before the login dialog appears
-wal -i "$(< "$(HOME)/.cache/wal/wal")"      
-chown elt0khy /sys/class/backlight/ideapad/brightness
-xbindkeys 
-
