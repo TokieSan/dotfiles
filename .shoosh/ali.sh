@@ -22,6 +22,8 @@ alias ll='ls -all'
 alias df='df -h'
 alias deemix='deemix --bitrate FLAC -p .'
 alias harwest='~/.local/bin/harwest'
+alias rgrep='rga'
+
 rmtests() {
 	mv *test* ~/myBlackHole/tests/
 	rm -rf *.out
@@ -97,3 +99,4 @@ alias tunnelfast='sudo sshuttle --method=tproxy --remote=eltokhy@52.188.119.232 
 fastHotspot() { nmcli dev wifi hotspot ifname wlan0 ssid GNUHotspot password ${hotspotPwd}; }
 export -f fastHotspot
 alias code='codium'
+alias weather='curl ping.gg'

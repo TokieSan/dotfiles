@@ -21,6 +21,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'HugoNikanor/vim-breakpoint'
 Plug 'shime/vim-livedown'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'gabrielsimoes/cfparser.vim'
 call plug#end()
 
 " should markdown preview get shown automatically upon opening markdown buffer

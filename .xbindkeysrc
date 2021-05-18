@@ -130,3 +130,7 @@
 
 "flameshot full --path /home/elt0khy/Documents/scr/"
 	Super_L
+
+#course registeration
+#"sleep 0.1 && sh /home/elt0khy/.shoosh/registeration.sh"
+#	Super_L
