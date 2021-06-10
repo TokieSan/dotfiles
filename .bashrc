@@ -21,5 +21,6 @@ force_color_prompt=yes
 ulimit -s 2000123
 # set GTK_USE_PORTAL=1 
 export QT_QPA_PLATFORMTHEME=qt5ct
+export DXVK_HUD=devinfo,fps
 # PS1='[\u@\h \W]\$ '
 

@@ -125,10 +125,13 @@
 "bluedevil-wizard"
 	Shift + F11
 
+"pavucontrol"
+	Shift + F10
+
 "feh /home/elt0khy/Documents/fuckoff.png"
 	XF86PowerOff
 
-"flameshot full --path /home/elt0khy/Documents/scr/"
+"flameshot full --path /home/elt0khy/Documents/scr/; xbacklight -dec 80; sleep 0.1;xbacklight -inc 80"
 	Super_L
 
 #course registeration

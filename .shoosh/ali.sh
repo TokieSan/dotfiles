@@ -11,6 +11,16 @@ rmtests() {
 getAudio() {
 	ffmpeg -i "${1}" -vn -q:a 0 "${1}".ogg
 }
+mkcont(){
+	mkdir $1
+	touch $1/A.cpp
+	touch $1/B.cpp
+	touch $1/C.cpp
+	touch $1/D.cpp
+	touch $1/E.cpp
+	touch $1/F.cpp
+	cd $1
+}
 contestdone() {
 	mkdir ../"${1}"
 	mv * ../"${1}"/
@@ -46,11 +56,11 @@ op(){
 		rhet)
 			"ranger" "/home/elt0khy/shared/study/extra/rhet/1010"
 			;;
-		core)
-			"ranger" "/home/elt0khy/shared/study/extra/core"
+		sci)
+			"ranger" "/home/elt0khy/shared/study/extra/scientific"
 			;;
 		phys)
-			"ranger" "/home/elt0khy/shared/study/phys/1"
+			"ranger" "/home/elt0khy/shared/study/phys/2"
 			;;
 		scr)
 			"ranger" "/home/elt0khy/Documents/scr"
