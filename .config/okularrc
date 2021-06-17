@@ -1,1 +1,28 @@
+[Desktop Entry]
+FullScreen=false
 
+[MainWindow]
+DP-2 HDMI-0 Height 1600x900=877
+DP-2 HDMI-0 Height 1920x1080=1057
+DP-2 HDMI-0 Width 1600x900=1598
+DP-2 HDMI-0 Width 1920x1080=1918
+DP-2 HDMI-0 XPosition 1600x900=1920
+DP-2 HDMI-0 XPosition 1920x1080=1
+DP-2 HDMI-0 YPosition 1600x900=21
+DP-2 HDMI-0 YPosition 1920x1080=22
+State=AAAA/wAAAAD9AAAAAAAAB34AAAPdAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/shared/study/extra/scientific/Scientific Thinking Course Calendar - Summer 2021.pdf
+File2[$e]=$HOME/shared/study/phys/2/Test Banks/Ch23.pdf
+File3[$e]=$HOME/shared/study/phys/2/testbank.pdf
+File4[$e]=$HOME/shared/study/phys/2/homework_solutions_all.pdf
+File5[$e]=$HOME/shared/study/phys/2/textbook_phys.pdf
+File6[$e]=$HOME/shared/study/phys/2/UTF-8''Course_Syllabus_Phy112_2021.pdf
+Name1[$e]=Scientific Thinking Course Calendar - Summer 2021.pdf
+Name2[$e]=Ch23.pdf
+Name3[$e]=testbank.pdf
+Name4[$e]=homework_solutions_all.pdf
+Name5[$e]=textbook_phys.pdf
+Name6[$e]=UTF-8''Course_Syllabus_Phy112_2021.pdf

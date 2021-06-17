@@ -22,23 +22,9 @@ mkcont(){
 	cd $1
 }
 contestdone() {
-	mkdir ../"${1}"
-	mv * ../"${1}"/
+	mkdir ../archive/"${1}"
+	mv * ../archive/"${1}"/
 	rm .cph/*
-}
-comp() {
-	case ${1} in
-		t)
-			"cp" "/home/elt0khy/.shoosh/comp_template_testcases.cpp" "${2}.cpp" & "vim" "${2}.cpp" "+141"
-			;;
-
-		n)
-			"cp" "/home/elt0khy/.shoosh/comp_template.cpp" "${2}.cpp" & "vim" "${2}.cpp" "+148"
-			;;
-		*)
-			echo -n "Issue"
-			;;
-	esac
 }
 
 search(){
@@ -111,3 +97,5 @@ alias df='df -h'
 alias deemix='deemix --bitrate FLAC -p .'
 alias harwest='~/.local/bin/harwest'
 alias rgrep='rga'
+alias xx="curl -F 'f:1=<-' ix.io"
+alias zazyoutubeaudio='youtube-dl -x --audio-format flac -f bestaudio -o "%(title)s.%(ext)s"'
