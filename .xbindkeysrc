@@ -128,12 +128,15 @@
 "pavucontrol"
 	Shift + F10
 
-"feh /home/elt0khy/Documents/fuckoff.png"
+"feh /home/elt0khy/Documents/fuckoff"
 	XF86PowerOff
 
 "flameshot full --path /home/elt0khy/Documents/scr/; xbacklight -dec 80; sleep 0.1;xbacklight -inc 80"
 	Super_L
 
+"mpc sendmessage mpdas love"
+	Alt + Insert
+	
 #course registeration
 #"sleep 0.1 && sh /home/elt0khy/.shoosh/registeration.sh"
 #	Super_L

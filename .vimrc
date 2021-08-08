@@ -111,7 +111,7 @@ set mouse=a
 autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
 autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=%:r % 
-autocmd FileType cpp,h command -buffer W write | !g++ -std=c++11 -O2 -Wall "%" -o "%:r.out"
+autocmd FileType cpp,h command -buffer W write | !g++ -std=c++14 -O2 -Wall "%" -o "%:r.out" -g -fsanitize=undefined -DLOCAL 
 autocmd FileType md,markdown autocmd TextChanged,TextChangedI <buffer> silent write
 autocmd FileType md,markdown command -buffer W write | LivedownPreview
 

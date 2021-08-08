@@ -27,6 +27,11 @@ contestdone() {
 	rm .cph/*
 }
 
+folder(){
+	mkdir "${1}"
+	cd "${1}"
+}
+
 search(){
 	"links" "https://duckduckgo.com/?q=${1}"
 }
@@ -98,4 +103,5 @@ alias deemix='deemix --bitrate FLAC -p .'
 alias harwest='~/.local/bin/harwest'
 alias rgrep='rga'
 alias xx="curl -F 'f:1=<-' ix.io"
-alias zazyoutubeaudio='youtube-dl -x --audio-format flac -f bestaudio -o "%(title)s.%(ext)s"'
+alias zazyoutubeaudio='youtube-dl -x -f bestaudio -o "%(title)s.%(ext)s"'
+alias instaload='instaloader --stories --highlights --tagged --login elt0khy'
