@@ -8,13 +8,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'"
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'preservim/nerdtree'
-Plugin 'SirVer/ultisnips'
+Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
 call vundle#end()           
 
 filetype plugin indent on   
 
 call plug#begin()
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'prabirshrestha/vim-lsp'
@@ -34,6 +35,11 @@ call plug#end()
 " let g:livedown_browser = "safari"
 
 autocmd BufRead,BufNewFile   *.txt,*.md,*.tex setlocal spell spelllang=en_us
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 let g:UltiSnipsSnippetDirectories=$HOME.'/.vim/UltiSnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -69,12 +75,15 @@ let g:lightline = {
 
 
 set number
+set nocompatible
 syntax on
 set hidden
-set nobackup
-set nowritebackup
 set tabstop=4
 set autoindent
+set smartindent
+set ruler
+set showcmd
+set incsearch
 set cindent
 set clipboard=unnamed
 set softtabstop=4
@@ -83,7 +92,6 @@ set exrc
 set secure
 set shiftwidth=0
 set noexpandtab
-set splitbelow
 set splitright
 set cmdheight=2
 set noshowmode
@@ -92,7 +100,7 @@ set laststatus=2
 " set hlsearch
 set updatetime=300
 " set relativenumber
-"#set colorcolumn=
+" set colorcolumn=80
 highlight LineNr ctermfg=lightgreen ctermbg=233
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
@@ -108,34 +116,44 @@ augroup project
 augroup END
 set mouse=a
 
+
 autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
 autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=%:r % 
-autocmd FileType cpp,h command -buffer W write | !g++ -std=c++14 -O2 -Wall "%" -o "%:r.out" -g -fsanitize=undefined -DLOCAL 
+autocmd FileType cpp,h command -buffer W write | !g++ -std=c++14 -O2 -Wall -Wextra "%" -o "%:r" -g -fsanitize=undefined -DLOCAL 
 autocmd FileType md,markdown autocmd TextChanged,TextChangedI <buffer> silent write
 autocmd FileType md,markdown command -buffer W write | LivedownPreview
 
-autocmd FileType cpp,h command -buffer M write | !./"%:r.out"
+autocmd filetype cpp command -buffer M write | vert terminal ./%:r
 autocmd FileType tex,texmath command -buffer M write | LLPStartPreview
 autocmd FileType md,markdown command -buffer M write | LivedownToggle
+
+
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-n> :tabnew<CR>
 nnoremap <C-u> :u<CR>
-nnoremap <S-m> :W<CR>
-nnoremap <S-k> :M<CR>
+" Compile and run
+nnoremap <silent><F10> :W<CR>:M<CR>
+" (W)rite
+nnoremap <Leader>w :w<CR>
+" (C)ompile
+nnoremap <Leader>c :W<CR>
+" (R)un
+nnoremap <Leader>r :M <CR>
 nnoremap <C-J> <C-W><C-J>
-nnoremap <S-w> :w<CR>
 nnoremap <S-q> :q<CR>
 nnoremap <S-tab> :tabnext<CR>
 nnoremap <S-z> :NERDTree<CR>
-nnoremap <C-A> :%y+<CR>
 nnoremap <A-j> :m+<CR>==
 nnoremap <A-k> :m-2<CR>==
 nnoremap <S-z> z=
 nnoremap <S-p> :BreakpointToggle<CR>
 nnoremap <c-f> [s1z=<c-o>
+nnoremap <Leader>cft :vert terminal cftest.sh %<CR>
+nnoremap <leader>t :vert terminal<CR>
+nnoremap <leader>cc :write <CR>:!g++ -std=c++11 -Wall "%" -o "%:r.out" -DLOCAL<CR>
 
 inoremap <c-f> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-v> <ESC>"+pa
@@ -152,7 +170,7 @@ vnoremap <C-c> "+y
 vnoremap <C-d> "+d
 vnoremap <A-j> :m'>+<CR>gv=gv
 vnoremap <A-k> :m-2<CR>gv=gv
- 
-cmap w!! %!sudo tee > /dev/null %
 
-let g:ycm_global_ycm_extra_conf = '/home/elt0khy/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+nmap <leader>y ggVG"+y''
+
+cmap w!! %!sudo tee > /dev/null %

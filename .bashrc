@@ -13,6 +13,7 @@ alias ls='ls --color=auto'
 . "/home/elt0khy/.cache/wal/colors.sh"
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 
+export PATH=$PATH:~/.shoosh/
 
 (cat ~/.cache/wal/sequences &)
 clear
