@@ -142,6 +142,8 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>c :W<CR>
 " (R)un
 nnoremap <Leader>r :M <CR>
+" (Q)uit
+nnoremap <Leader>q :wq! <CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <S-q> :q<CR>
 nnoremap <S-tab> :tabnext<CR>
