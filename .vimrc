@@ -120,7 +120,7 @@ set mouse=a
 autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
 autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=%:r % 
-autocmd FileType cpp,h command -buffer W write | !g++ -std=c++14 -O2 -Wall -Wextra "%" -o "%:r" -g -fsanitize=undefined -DLOCAL 
+autocmd FileType cpp,h command -buffer W write | !g++ -std=c++17 -O2 -Wall -Wextra "%" -o "%:r" -g -fsanitize=undefined -DLOCAL 
 autocmd FileType md,markdown autocmd TextChanged,TextChangedI <buffer> silent write
 autocmd FileType md,markdown command -buffer W write | LivedownPreview
 
@@ -151,11 +151,14 @@ nnoremap <S-z> :NERDTree<CR>
 nnoremap <A-j> :m+<CR>==
 nnoremap <A-k> :m-2<CR>==
 nnoremap <S-z> z=
-nnoremap <S-p> :BreakpointToggle<CR>
 nnoremap <c-f> [s1z=<c-o>
 nnoremap <Leader>cft :vert terminal cftest.sh %<CR>
 nnoremap <leader>t :vert terminal<CR>
 nnoremap <leader>cc :write <CR>:!g++ -std=c++11 -Wall "%" -o "%:r.out" -DLOCAL<CR>
+nnoremap <C-K> <CMD>m .-2<CR>
+nnoremap <C-J> <CMD>m .+1<CR>
+nnoremap <C-H> <<
+nnoremap <C-L> >> 
 
 inoremap <c-f> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-v> <ESC>"+pa

@@ -39,22 +39,28 @@ search(){
 op(){
 	case ${1} in
 		math)
-			"ranger" "/home/elt0khy/shared/study/math/calc2"
+			"ranger" "/home/elt0khy/shared/study/math/discrete"
+			;;
+		music)
+			"ranger" "/home/elt0khy/shared/Music/Music/"
 			;;
 		cs)
-			"ranger" "/home/elt0khy/shared/study/cs/cs2"
+			"ranger" "/home/elt0khy/shared/study/cs/analysis"
 			;;
 		rhet)
-			"ranger" "/home/elt0khy/shared/study/extra/rhet/1010"
+			"ranger" "/home/elt0khy/shared/study/extra/rhet120"
 			;;
 		sci)
 			"ranger" "/home/elt0khy/shared/study/extra/scientific"
 			;;
 		phys)
-			"ranger" "/home/elt0khy/shared/study/phys/2"
+			"ranger" "/home/elt0khy/shared/study/phys/3"
 			;;
 		scr)
 			"ranger" "/home/elt0khy/Documents/scr"
+			;;
+		phil)
+			"ranger" "/home/elt0khy/shared/study/extra/phil"
 			;;
 		*)
 			"ranger" "/home/elt0khy/shared/${1}"
@@ -68,6 +74,7 @@ compress(){
 }
 alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
+alias updatesty='cd /usr/share/texmf/ ; sudo mktexlsr'
 alias sexkb='setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle'
 alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --delete --exclude={"/home","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/dhcpcd/*","/mnt/backup"} / /mnt/backup'
 dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video2; }
@@ -99,7 +106,8 @@ alias gitcommit='git commit -m'
 alias kilall='killall'
 alias quitX='pkill -15 Xorg'
 alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
-alias ll='ls -all'
+alias ll='ls -all --color=auto'
+alias ls='ls --color=auto'
 alias df='df -h'
 alias deemix='deemix --bitrate FLAC -p .'
 alias harwest='~/.local/bin/harwest'
@@ -107,3 +115,5 @@ alias rgrep='rga'
 alias xx="curl -F 'f:1=<-' ix.io"
 alias zazyoutubeaudio='youtube-dl -x -f bestaudio -o "%(title)s.%(ext)s"'
 alias instaload='instaloader --stories --highlights --tagged --login elt0khy'
+alias oggflac='find . -name *flac -exec oggenc -q 7 {} \;'
+alias oggflacrm='find . -name *flac -exec rm {} \;'

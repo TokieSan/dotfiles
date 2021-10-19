@@ -14,6 +14,7 @@ alias ls='ls --color=auto'
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 
 export PATH=$PATH:~/.shoosh/
+export PATH=$PATH:~/scripts/
 
 (cat ~/.cache/wal/sequences &)
 clear
@@ -24,4 +25,20 @@ ulimit -s 2000123
 export QT_QPA_PLATFORMTHEME=qt5ct
 export DXVK_HUD=devinfo,fps
 # PS1='[\u@\h \W]\$ '
+
+
+## >>> conda initialize >>>
+## !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/elt0khy/shared/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#	eval "$__conda_setup"
+#else
+#	if [ -f "/home/elt0khy/shared/anaconda3/etc/profile.d/conda.sh" ]; then
+#		. "/home/elt0khy/shared/anaconda3/etc/profile.d/conda.sh"
+#	else
+#		export PATH="/home/elt0khy/shared/anaconda3/bin:$PATH"
+#	fi
+#fi
+#unset __conda_setup
+## <<< conda initialize <<<
 
