@@ -44,11 +44,11 @@
 #"rxvt"
 #  Control + b:2 + Release
 #increase vol
-"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+"sh /home/elt0khy/scripts/changeVolume.sh +5%"
 	XF86AudioRaiseVolume
 
 #Dec Vol
-"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+"sh /home/elt0khy/scripts/changeVolume.sh -5%"
 	XF86AudioLowerVolume
 
 #mute
@@ -59,10 +59,10 @@
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 	XF86AudioMicMute
 
-"xbacklight -inc 10"
+"sh /home/elt0khy/scripts/changeBrightness.sh -inc 10"
 	XF86MonBrightnessUp
 
-"xbacklight -dec 10"
+"sh /home/elt0khy/scripts/changeBrightness.sh -dec 10"
 	XF86MonBrightnessDown
 
 "xbacklight -set 0"
@@ -79,15 +79,6 @@
 
 "flameshot gui"
 	Print
-
-"systemctl suspend"
-	Control + Alt + l
-
-"systemctl poweroff"
-	Control + Shift + Alt + l
-
-"reboot"
-	Shift + Alt + o
 
 "networkmanager_dmenu"
 	Shift + F12
@@ -113,6 +104,9 @@
 "telegram-desktop"
 	Control + Shift + g
 
+"dunstctl history-pop"
+	Shift + F9
+
 "keepassxc"
 	Control + Shift + c
 
@@ -128,8 +122,13 @@
 "pavucontrol"
 	Shift + F10
 
-"feh /home/elt0khy/Documents/fuckoff"
+#"feh /home/elt0khy/Documents/fuckoff"
+"sh /home/elt0khy/scripts/shutdowndmenu.sh"
 	XF86PowerOff
+
+"sh /home/elt0khy/scripts/shutdowndmenu.sh"
+	Alt + Shift + o	
+
 
 "flameshot full --path /home/elt0khy/Documents/scr/; xbacklight -dec 80; sleep 0.1;xbacklight -inc 80"
 	Super_L
@@ -140,3 +139,6 @@
 #course registeration
 #"sleep 0.1 && sh /home/elt0khy/.shoosh/registeration.sh"
 #	Super_L
+
+"dunstctl set-paused toggle"
+	Shift + F7
