@@ -113,7 +113,7 @@
 "emoji-keyboard"
 	Control + Alt + f
 
-"mpv $(xclip -o)"
+"notify-send 'Opening youtube video...' && sleep 0.1 && mpv $(xclip -o) "
 	Control + Shift + y 
 
 "bluedevil-wizard"

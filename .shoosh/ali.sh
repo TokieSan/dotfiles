@@ -39,7 +39,7 @@ search(){
 op(){
 	case ${1} in
 		math)
-			"ranger" "/home/elt0khy/shared/study/math/discrete"
+			"ranger" "/home/elt0khy/shared/study/math/calc3"
 			;;
 		music)
 			"ranger" "/home/elt0khy/shared/Music/Music/"
