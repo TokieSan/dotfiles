@@ -38,7 +38,7 @@ endfunction
 
 function! s:GetDefaultCmd(file) abort
   " Refer to tagbar
-  let common_opt = '--format=2 --excmd=pattern --fields=nksSaf --extras=+F --sort=no --append=no'
+  let common_opt = '--format=2 --excmd=pattern --fields=+nksSaf --extras=+F --sort=no --append=no'
 
   " Do not pass --extras for C/CPP in order to let uctags handle the tags for anonymous
   " entities correctly.
@@ -131,6 +131,7 @@ function! s:ApplyExtracted() abort
   endif
 
   call s:NoteTemp()
+  call vista#cursor#TryInitialRun()
 endfunction
 
 function! s:ExtractLinewise(raw_data) abort

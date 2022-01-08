@@ -14,32 +14,6 @@
   <img  src="https://github.com/pineapplegiant/spaceduck-terminal/blob/main/img/screenshot.png?raw=true" alt="Screenshot of terminal with vim spaceduck theme installed">
 </center>
 
-# Table of Contents
-
-- [Inspiration 💭](#inspiration-💭)
-- [Colors Palette 🎨](#colors-palette-🎨)
-  - [Base Colors](#base-colors)
-  - [Special Colors](#special-colors)
-  - [Coloration Colors](#coloration-colors)
-  - [Current Language Support](#current-language-support)
-- [Install 💾](#install-💾)
-- [Vim and Neovim](#vim-and-neovim)
-- [Other Spaceduck Ports](#other-spaceduck-ports)
-  - [Terminal](#terminal)
-  - [VSCode](#vscode)
-  - [Emacs](#emacs)
-  - [Slack](#slack)
-  - [Tmux](#tmux)
-- [Troubleshooting 🔧](#troubleshooting-)
-  - [True color](#true-color)
-  - [Colors don't look right](#colors-dont-look-right)
-- [Screenshots 📸](#screenshots-📸)
-- [Credits 💳](#credits-💳)
-- [Contribute 🙏](#contribute-🙏)
-  - [Vim Estilo](#vim-estilo)
-    - [Testing colors look good](#testing-colors-look-good)
-    - [TODO](#todo)
-
 # Inspiration 💭
 
 This theme was inspired from my incessant desire to feel like I'm in space when I stare at a computer.
@@ -53,7 +27,7 @@ If it looks ugly it's because I don't know what I'm doing pls help. If it's the 
 
 ## Base Colors
 
-_Note: The Syn color ID's are not an exhaustive & complete list._
+_Note: The Syntax color ID's are not an exhaustive & complete list._
 
 | ![Color Picker Boxes](https://github.com/pineapplegiant/spaceduck-terminal/blob/main/img/eyedropper.png?raw=true)  | Palette      | Hex       | HSV/HSB       | RGB             | cterm/256 | SYN ID                                                     |
 | ------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | ------------- | --------------- | --------- | ---------------------------------------------------------- |
@@ -88,15 +62,21 @@ _Note: The Syn color ID's are not an exhaustive & complete list._
 
 ## Current Language Support
 
+Basically languages I looked at with my eyes to make sure they didn't look like poop.
+
 **Languages:**
 
 _Note: if something looks off please submit an issue with a screenshot_
 
-- C, C++, fortran, haskell, html, java, javascript, markdown, php, python, ruby, sql, laTex, typescript
+- C, C++, fortran, haskell, html, java, javascript, markdown, php, python, ruby, sql, LaTeX, typescript
 
 **Plugins:**
 
-- [Lightline](https://github.com/itchyny/lightline.vim), [Airline](https://github.com/vim-airline/vim-airline), [Vista](https://github.com/liuchengxu/vista.vim)
+- [Lightline](https://github.com/itchyny/lightline.vim),
+  [Airline](https://github.com/vim-airline/vim-airline),
+  [Vista](https://github.com/liuchengxu/vista.vim),
+  [BarBar](https://github.com/romgrk/barbar.nvim),
+  [Lualine](https://github.com/hoob3rt/lualine.nvim)
 
 # Install 💾
 
@@ -138,8 +118,8 @@ Or manually add the color theme to your 'runtimepath' for the file.
 
 <center>
   <img  src="https://github.com/pineapplegiant/spaceduck-terminal/blob/main/img/normal.png?raw=true" alt="lightline normal mode screenshot">
-  <img  src="https://github.com/pineapplegiant/spaceduck-terminal/blob/main/img/visual.png?raw=true" alt="lightline visual mode screenshot">
   <img  src="https://github.com/pineapplegiant/spaceduck-terminal/blob/main/img/insert.png?raw=true" alt="lightline insert mode screenshot">
+  <img  src="https://github.com/pineapplegiant/spaceduck-terminal/blob/main/img/visual.png?raw=true" alt="lightline visual mode screenshot">
   <img  src="https://github.com/pineapplegiant/spaceduck-terminal/blob/main/img/replace.png?raw=true" alt="lightline replace mode screenshot">
 </center>
 
@@ -151,6 +131,48 @@ Or manually add the color theme to your 'runtimepath' for the file.
 
 Don't be afraid of the vim documentation either for more information, like for manual installs!
 `:h colorscheme`
+
+- [Lualine](https://github.com/hoob3rt/lualine.nvim)
+
+<center>
+  <img  src="https://user-images.githubusercontent.com/32819563/111934957-16f0d780-8a88-11eb-9f33-f02c9ba364c1.png" alt="lualine normal mode screenshot">
+  <img  src="https://user-images.githubusercontent.com/32819563/111934981-21ab6c80-8a88-11eb-8118-dfbc2dc3bddf.png" alt="lualine insert mode screenshot">
+  <img  src="https://user-images.githubusercontent.com/32819563/111935019-325be280-8a88-11eb-9846-a2d7bfec226c.png" alt="lualine visual mode screenshot">
+  <img  src="https://user-images.githubusercontent.com/32819563/111935037-3ab41d80-8a88-11eb-8797-2b6db14cbff8.png" alt="lualine replace mode screenshot">
+</center>
+
+You only really need `'theme': 'spaceduck'`, but this is what I have in my vimrc:
+
+```viml
+  let g:lualine = {
+      \'options' : {
+      \  'theme' : 'spaceduck',
+      \  'section_separators' : ['', ''],
+      \  'component_separators' : ['', ''],
+      \  'icons_enabled' : v:true,
+      \},
+      \'sections' : {
+      \  'lualine_a' : [ ['mode', {'upper': v:true,},], ],
+      \  'lualine_b' : [ ['branch', {'icon': '',}, ], ],
+      \  'lualine_c' : [ ['filename', {'file_status': v:true,},], ],
+      \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype' ],
+      \  'lualine_y' : [ 'progress' ],
+      \  'lualine_z' : [ 'location'  ],
+      \},
+      \'inactive_sections' : {
+      \  'lualine_a' : [  ],
+      \  'lualine_b' : [  ],
+      \  'lualine_c' : [ 'filename' ],
+      \  'lualine_x' : [ 'location' ],
+      \  'lualine_y' : [  ],
+      \  'lualine_z' : [  ],
+      \},
+      \'extensions' : [ 'fzf' ],
+      \}
+
+  lua require("lualine").setup()
+```
+
 
 # Other Spaceduck Ports
 
@@ -208,7 +230,9 @@ Checkout some tmux config inspiration here at [the terminal repo](https://github
 
 ## True color
 
-Make sure you are using a terminal emulator that supports `truecolor`. [Read more about truecolor support here](https://gist.github.com/XVilka/8346728).
+Make sure you are using a terminal emulator that supports `truecolor`.
+
+[Read more about truecolor support here](https://gist.github.com/XVilka/8346728).
 
 ## Colors don't look right
 
@@ -260,7 +284,7 @@ And in your `.bash_profile or .zshrc`:
 
 # Contribute 🙏
 
-If you'd like to contribute please reach out! I don't know what I'm doing.
+If you'd like to contribute please reach out! I don't know what I'm doing. Try to send a screenshot when posting issues as well.
 If you port it to whatever you're using, send me a link so I can link it here!
 
 ## Vim Estilo
@@ -290,15 +314,4 @@ This will show you the syntax ID to where we can then modify the color of that w
 
 ### TODO
 
-- [x] Screenshots gallery for colorscheme.
-- [x] Finalize proper coloring of syntax keywords.
-- [x] Port it to Alacritty & Kitty
-- [x] Add TMUX color snippet.
-- [ ] Ensure support various of popular plugins: easyMotion, ALE, COC, etc
-- [ ] Fix ugly VimDiff?
-- [ ] Better 256 color for older terminals.
-- [ ] Add Bash prompt color codes.
-- [ ] Test if Airline looks nice and works.
-- [ ] Add manual installation for vim/neovim.
-- [ ] Port it to VSCODE for the homies?
-- [ ] Make a pretty website landing page.
+Check out my [Todo list](https://github.com/pineapplegiant/spaceduck/projects/1)

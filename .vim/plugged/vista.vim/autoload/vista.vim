@@ -111,6 +111,7 @@ function! vista#RunForNearestMethodOrFunction() abort
   let [bufnr, winnr, fname, fpath] = [bufnr('%'), winnr(), expand('%'), expand('%:p')]
   call vista#source#Update(bufnr, winnr, fname, fpath)
   call vista#executive#{g:vista_default_executive}#Execute(v:false, v:false)
+  let g:__vista_initial_run_find_nearest_method = 1
 
   if !exists('#VistaMOF')
     call vista#autocmd#InitMOF()
@@ -226,7 +227,7 @@ function! vista#(bang, ...) abort
     call s:HandleSingleArgument(a:1)
   elseif a:0 == 2
     call s:HandleArguments(a:1, a:2)
-  else
+  elseif a:0 > 0
     return vista#error#('Too many arguments for Vista')
   endif
 endfunction

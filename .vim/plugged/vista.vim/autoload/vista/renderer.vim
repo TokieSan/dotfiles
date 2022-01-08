@@ -49,6 +49,7 @@ let g:vista#renderer#ctags = get(g:, 'vista#renderer#ctags', 'default')
 let g:vista#renderer#icons = map(extend(s:icons, get(g:, 'vista#renderer#icons', {})), 'tolower(v:val)')
 let g:vista#renderer#enable_icon = get(g:, 'vista#renderer#enable_icon',
       \ exists('g:vista#renderer#icons') || exists('g:airline_powerline_fonts'))
+let g:vista#renderer#enable_kind = get(g:, 'vista#renderer#enable_kind', !g:vista#renderer#enable_icon)
 
 function! vista#renderer#IconFor(kind) abort
   if g:vista#renderer#enable_icon
@@ -63,6 +64,14 @@ function! vista#renderer#IconFor(kind) abort
   endif
 endfunction
 
+function! vista#renderer#KindFor(kind) abort
+  if g:vista#renderer#enable_kind
+    return a:kind
+  else
+    return ''
+  endif
+endfunction
+
 function! vista#renderer#Decorate(kind) abort
   if g:vista#renderer#enable_icon
     return vista#renderer#IconFor(a:kind).' '.a:kind
@@ -72,7 +81,7 @@ function! vista#renderer#Decorate(kind) abort
 endfunction
 
 function! s:Render(data) abort
-  if g:vista.provider ==# 'coc'
+  if g:vista.provider ==# 'coc' && type(a:data) == v:t_list
     return vista#renderer#hir#lsp#Coc(a:data)
   elseif g:vista.provider ==# 'ctags' && g:vista#renderer#ctags ==# 'default'
     return vista#renderer#hir#ctags#Render()

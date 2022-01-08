@@ -91,12 +91,9 @@ function! vista#finder#fzf#sink(line, ...) abort
   else
     call vista#source#GotoWin()
   endif
-  call cursor(lnum, col)
+  call vista#util#Cursor(lnum, col)
   normal! zz
   call call('vista#util#Blink', get(g:, 'vista_blink', [2, 100]))
-  if g:vista_close_on_fzf_select
-    call vista#sidebar#Close()
-  endif
 endfunction
 
 " Actually call fzf#run() with a highlighter given the opts
@@ -132,7 +129,7 @@ function! s:project_sink(line) abort
   let lnum = split(parts[1], ':')[0]
   let relpath = parts[3]
   execute 'edit' relpath
-  call cursor(lnum, 1)
+  call vista#util#Cursor(lnum, 1)
   normal! zz
 endfunction
 
@@ -187,6 +184,9 @@ endfunction
 " Optional argument: executive, coc or ctags
 " Ctags is the default.
 function! vista#finder#fzf#Run(...) abort
+  if g:vista_close_on_fzf_select
+    call vista#sidebar#Close()
+  endif
   if !exists('*fzf#run')
     return vista#error#Need('https://github.com/junegunn/fzf')
   endif

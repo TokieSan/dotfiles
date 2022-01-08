@@ -29,6 +29,7 @@ augroup _lsp_silent_
     autocmd User lsp_complete_done silent
     autocmd User lsp_float_opened silent
     autocmd User lsp_float_closed silent
+    autocmd User lsp_float_focused silent
     autocmd User lsp_buffer_enabled silent
     autocmd User lsp_diagnostics_updated silent
     autocmd User lsp_progress_updated silent
@@ -61,7 +62,9 @@ function! lsp#enable() abort
     call lsp#ui#vim#completion#_setup()
     call lsp#internal#document_highlight#_enable()
     call lsp#internal#diagnostics#_enable()
+    call lsp#internal#document_code_action#signs#_enable()
     call lsp#internal#show_message_request#_enable()
+    call lsp#internal#show_message#_enable()
     call lsp#internal#work_done_progress#_enable()
     call lsp#internal#completion#documentation#_enable()
     call s:register_events()
@@ -75,7 +78,9 @@ function! lsp#disable() abort
     call lsp#ui#vim#completion#_disable()
     call lsp#internal#document_highlight#_disable()
     call lsp#internal#diagnostics#_disable()
+    call lsp#internal#document_code_action#signs#_disable()
     call lsp#internal#show_message_request#_disable()
+    call lsp#internal#show_message#_disable()
     call lsp#internal#work_done_progress#_disable()
     call lsp#internal#completion#documentation#_disable()
     call s:unregister_events()
@@ -152,7 +157,7 @@ function! lsp#print_server_status() abort
 endfunction
 
 " @params {server_info} = {
-"   'name': 'go-langserver',        " requried, must be unique
+"   'name': 'go-langserver',        " required, must be unique
 "   'allowlist': ['go'],            " optional, array of filetypes to allow, * for all filetypes
 "   'blocklist': [],                " optional, array of filetypes to block, * for all filetypes,
 "   'cmd': {server_info->['go-langserver]} " function that takes server_info and returns array of cmd and args, return empty if you don't want to start the server
@@ -202,11 +207,14 @@ function! s:register_events() abort
         autocmd BufReadPost * call s:on_text_document_did_open()
         autocmd BufWritePost * call s:on_text_document_did_save()
         autocmd BufWinLeave * call s:on_text_document_did_close()
-        autocmd BufWipeout * call s:on_buf_wipeout(bufnr('<afile>'))
+        autocmd BufWipeout * call s:on_buf_wipeout(expand('<afile>'))
         autocmd InsertLeave * call s:on_text_document_did_change()
         autocmd TextChanged * call s:on_text_document_did_change()
         if exists('##TextChangedP')
             autocmd TextChangedP * call s:on_text_document_did_change()
+        endif
+        if g:lsp_untitled_buffer_enabled
+            autocmd FileType * call s:on_filetype_changed(bufnr(expand('<afile>')))
         endif
     augroup END
 
@@ -222,6 +230,12 @@ function! s:unregister_events() abort
         autocmd!
     augroup END
     doautocmd <nomodeline> User lsp_unregister_server
+endfunction
+
+function! s:on_filetype_changed(buf) abort
+  call s:on_buf_wipeout(a:buf)
+  " TODO: stop unused servers
+  call s:on_text_document_did_open()
 endfunction
 
 function! s:on_text_document_did_open(...) abort
@@ -467,7 +481,9 @@ function! lsp#default_get_supported_capabilities(server_info) abort
     \           'codeActionKind': {
     \             'valueSet': ['', 'quickfix', 'refactor', 'refactor.extract', 'refactor.inline', 'refactor.rewrite', 'source', 'source.organizeImports'],
     \           }
-    \         }
+    \         },
+    \         'isPreferredSupport': v:true,
+    \         'disabledSupport': v:true,
     \       },
     \       'codeLens': {
     \           'dynamicRegistration': v:false,
@@ -528,6 +544,9 @@ function! lsp#default_get_supported_capabilities(server_info) abort
     \       },
     \       'semanticHighlightingCapabilities': {
     \           'semanticHighlighting': lsp#ui#vim#semantic#is_enabled()
+    \       },
+    \       'publishDiagnostics': {
+    \           'relatedInformation': v:true,
     \       },
     \       'synchronization': {
     \           'didSave': v:true,
@@ -610,12 +629,12 @@ endfunction
 function! s:ensure_conf(buf, server_name, cb) abort
     let l:server = s:servers[a:server_name]
     let l:server_info = l:server['server_info']
-    if has_key(l:server_info, 'workspace_config')
-        let l:workspace_config = l:server_info['workspace_config']
+    if has_key(l:server_info, 'workspace_config') && !get(l:server_info, '_workspace_config_sent', v:false)
+        let l:server_info['_workspace_config_sent'] = v:true
         call s:send_notification(a:server_name, {
             \ 'method': 'workspace/didChangeConfiguration',
             \ 'params': {
-            \   'settings': l:workspace_config,
+            \   'settings': l:server_info['workspace_config'],
             \ }
             \ })
     endif
@@ -1036,7 +1055,7 @@ function! s:request_cancel(ctx) abort
     if lsp#get_server_status(a:ctx['server_name']) !=# 'running' | return | endif " if server is not running we cant send the request
     " send the actual cancel request
     let a:ctx['dispose'] = lsp#callbag#pipe(
-        \ lsp#request(a:ctx['server_name'], {
+        \ lsp#notification(a:ctx['server_name'], {
         \   'method': '$/cancelRequest',
         \   'params': { 'id': a:ctx['request_id'] },
         \ }),
@@ -1073,6 +1092,12 @@ endfunction
 function! s:send_request_error(ctx, error) abort
     call a:ctx['cb'](a:error)
     call s:send_request_dispose(a:ctx)
+endfunction
+" }}}
+
+" lsp#notification {{{
+function! lsp#notification(server_name, request) abort
+    return lsp#callbag#lazy(function('s:send_notification', [a:server_name, a:request]))
 endfunction
 " }}}
 
@@ -1148,6 +1173,23 @@ function! lsp#get_progress() abort
     return lsp#internal#work_done_progress#get_progress()
 endfunction
 
+"
+" Scroll vim-lsp related windows.
+"
+" NOTE: This method can be used to <expr> mapping.
+"
+function! lsp#scroll(count) abort
+    let l:ctx = {}
+    function! l:ctx.callback(count) abort
+        let l:Window = vital#lsp#import('VS.Vim.Window')
+        for l:winid in l:Window.find({ winid -> l:Window.is_floating(winid) })
+            call l:Window.scroll(l:winid, l:Window.info(l:winid).topline + a:count)
+        endfor
+    endfunction
+    call timer_start(0, { -> l:ctx.callback(a:count) })
+    return "\<Ignore>"
+endfunction
+
 function! s:merge_dict(dict_old, dict_new) abort
     for l:key in keys(a:dict_new)
         if has_key(a:dict_old, l:key) && type(a:dict_old[l:key]) == v:t_dict && type(a:dict_new[l:key]) == v:t_dict
@@ -1166,6 +1208,7 @@ function! lsp#update_workspace_config(server_name, workspace_config) abort
     else
         let l:server_info['workspace_config'] = a:workspace_config
     endif
+    let l:server_info['_workspace_config_sent'] = v:false
     call s:ensure_conf(bufnr('%'), a:server_name, function('s:Noop'))
 endfunction
 
