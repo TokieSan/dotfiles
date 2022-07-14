@@ -38,29 +38,14 @@ search(){
 
 op(){
 	case ${1} in
-		math)
-			"ranger" "/home/elt0khy/shared/study/math/calc3"
-			;;
 		music)
 			"ranger" "/home/elt0khy/shared/Music/Music/"
 			;;
-		cs)
-			"ranger" "/home/elt0khy/shared/study/cs/analysis"
-			;;
-		rhet)
-			"ranger" "/home/elt0khy/shared/study/extra/rhet120"
-			;;
-		sci)
-			"ranger" "/home/elt0khy/shared/study/extra/scientific"
-			;;
-		phys)
-			"ranger" "/home/elt0khy/shared/study/phys/3"
+        diff)
+			"ranger" "/home/elt0khy/shared/study/math/diff/"
 			;;
 		scr)
 			"ranger" "/home/elt0khy/Documents/scr"
-			;;
-		phil)
-			"ranger" "/home/elt0khy/shared/study/extra/phil"
 			;;
 		*)
 			"ranger" "/home/elt0khy/shared/${1}"

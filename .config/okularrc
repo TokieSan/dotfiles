@@ -1,5 +1,7 @@
 [Desktop Entry]
 FullScreen=false
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
 
 [MainWindow]
 DP-2 HDMI-0 Height 1600x900=877
@@ -20,30 +22,29 @@ DP-2 HDMI-0 YPosition 800x450=11
 DP-2 HDMI-0 YPosition 960x540=11
 DP-2 Height 1920x1080=1057
 DP-2 Width 1920x1080=1918
-DP-2 XPosition 1920x1080=1
-DP-2 YPosition 1920x1080=22
-RestorePositionForNextInstance=false
+DP-2 XPosition 1920x1080=55
+DP-2 YPosition 1920x1080=119
 State=AAAA/wAAAAD9AAAAAAAAB34AAAPdAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAQAAAAEAAAAsAHEAdQBpAGMAawBBAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHICAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/shared/study/phys/3/physics 3/lecture notes/Chapter4_Lecture_Notes.pdf
-File10[$e]=$HOME/shared/study/math/calc3/cheatSheet/CheatSheet/cheatSheet.pdf
-File2[$e]=$HOME/shared/study/phys/3/physics 3/Assignments answers/assignment 5.pdf
-File3[$e]=$HOME/shared/study/phys/3/physics 3/lecture notes/Chapter1_Lecture_Notes.pdf
-File4[$e]=$HOME/shared/study/phys/3/physics 3/lecture notes/Chapter3_Lecture_Notes.pdf
-File5[$e]=$HOME/shared/study/phys/3/physics 3/lecture notes/Chapter5_Lecture_Notes.pdf
-File6[$e]=$HOME/shared/lib/Philosophy/Baudrillard/Baudrillard-The-Gulf-War-did-not-Take-Place.pdf
-File7[$e]=$HOME/shared/lib/Philosophy/Baudrillard/The Mirror of Production.pdf
-File8[$e]=$HOME/shared/study/math/calc3/MACT 2123 Winter 2022.pdf
-File9[$e]=$HOME/shared/study/math/calc3/textbook.pdf
-Name1[$e]=Chapter4_Lecture_Notes.pdf
-Name10[$e]=cheatSheet.pdf
-Name2[$e]=assignment 5.pdf
-Name3[$e]=Chapter1_Lecture_Notes.pdf
-Name4[$e]=Chapter3_Lecture_Notes.pdf
-Name5[$e]=Chapter5_Lecture_Notes.pdf
-Name6[$e]=Baudrillard-The-Gulf-War-did-not-Take-Place.pdf
-Name7[$e]=The Mirror of Production.pdf
-Name8[$e]=MACT 2123 Winter 2022.pdf
-Name9[$e]=textbook.pdf
+File1[$e]=$HOME/shared/study/math/diff/Lecture 14, 4.6, Variation of Parameters.pdf
+File10[$e]=$HOME/comp/bld/problemset.pdf
+File2[$e]=$HOME/shared/study/math/diff/exam2/Solution of Exam 2 (Spring 2018).pdf
+File3[$e]=$HOME/shared/study/math/diff/exam2/Solution of Exam 2 (Spring 2019).pdf
+File4[$e]=$HOME/shared/study/math/diff/exam2/Solution of Exam 2 (Spring 2020).pdf
+File5[$e]=$HOME/shared/study/math/diff/exam2/Solution of Exam 2 (Fall 2018).pdf
+File6[$e]=$HOME/shared/study/math/diff/exam2/Solution of Exam 2 (Winter 2019).pdf
+File7[$e]=$HOME/shared/study/math/diff/exam2/Solution of Exam 2 (Fall 2019).pdf
+File8[$e]=$HOME/shared/study/math/diff/Mact 2141 Syllabus Summer 2022(1).pdf
+File9[$e]=$HOME/shared/study/math/diff/Lecture 22, 7.6, Solving Systems of Linear DEs using Laplace Transform.pdf
+Name1[$e]=Lecture 14, 4.6, Variation of Parameters.pdf
+Name10[$e]=problemset.pdf
+Name2[$e]=Solution of Exam 2 (Spring 2018).pdf
+Name3[$e]=Solution of Exam 2 (Spring 2019).pdf
+Name4[$e]=Solution of Exam 2 (Spring 2020).pdf
+Name5[$e]=Solution of Exam 2 (Fall 2018).pdf
+Name6[$e]=Solution of Exam 2 (Winter 2019).pdf
+Name7[$e]=Solution of Exam 2 (Fall 2019).pdf
+Name8[$e]=Mact 2141 Syllabus Summer 2022(1).pdf
+Name9[$e]=Lecture 22, 7.6, Solving Systems of Linear DEs using Laplace Transform.pdf

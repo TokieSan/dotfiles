@@ -25,11 +25,12 @@ ulimit -s 2000123
 # set GTK_USE_PORTAL=1 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export DXVK_HUD=devinfo,fps
+export _JAVA_AWT_WM_NONREPARENTING=1
 # PS1='[\u@\h \W]\$ '
 
 
-## >>> conda initialize >>>
-## !! Contents within this block are managed by 'conda init' !!
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
 #__conda_setup="$('/home/elt0khy/shared/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 #if [ $? -eq 0 ]; then
 #	eval "$__conda_setup"
@@ -41,5 +42,5 @@ export DXVK_HUD=devinfo,fps
 #	fi
 #fi
 #unset __conda_setup
-## <<< conda initialize <<<
+# <<< conda initialize <<<
 

@@ -10,20 +10,17 @@ Plugin 'preservim/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
+Plugin 'liuchengxu/vista.vim'
+Plugin 'pineapplegiant/spaceduck'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'HugoNikanor/vim-breakpoint'
+Plugin 'shime/vim-livedown'
+Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plugin 'gabrielsimoes/cfparser.vim'
+Plugin 'preservim/nerdcommenter'
 call vundle#end()           
 
 filetype plugin indent on   
-
-call plug#begin()
-Plug 'liuchengxu/vista.vim'
-Plug 'pineapplegiant/spaceduck'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'HugoNikanor/vim-breakpoint'
-Plug 'shime/vim-livedown'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'gabrielsimoes/cfparser.vim'
-call plug#end()
-
 " should markdown preview get shown automatically upon opening markdown buffer
  let g:livedown_autorun = 1
 " should the browser window pop-up upon previewing
@@ -39,15 +36,16 @@ autocmd BufRead,BufNewFile   *.txt,*.md,*.tex setlocal spell spelllang=en_us
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
 let g:UltiSnipsSnippetDirectories=$HOME.'/.vim/UltiSnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-let g:livepreview_previewer = 'evince'
 
 " Executive used when opening vista sidebar without specifying it.
+let g:livepreview_previewer = 'evince'
 " See all the avaliable executives via `:echo g:vista#executives`.
 let g:vista_default_executive = 'ctags'
 
@@ -78,19 +76,16 @@ set nocompatible
 syntax on
 set hidden
 set tabstop=4
-set autoindent
-set smartindent
+set softtabstop=4
 set ruler
 set showcmd
 set incsearch
-set cindent
+set smartindent
 set clipboard=unnamed
-set softtabstop=4
-set expandtab
+set noexpandtab
 set exrc
 set secure
 set shiftwidth=0
-set noexpandtab
 set splitright
 set cmdheight=2
 set noshowmode
@@ -126,6 +121,7 @@ autocmd FileType md,markdown command -buffer W write | LivedownPreview
 autocmd filetype cpp command -buffer M write | vert terminal ./%:r
 autocmd FileType tex,texmath command -buffer M write | LLPStartPreview
 autocmd FileType md,markdown command -buffer M write | LivedownToggle
+autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -T4p
 
 
 
@@ -177,4 +173,7 @@ vnoremap <A-k> :m-2<CR>gv=gv
 
 nmap <leader>y ggVG"+y''
 
+let lineNumber = line('.')
+
+nmap bb <esc>gggqG
 cmap w!! %!sudo tee > /dev/null %
