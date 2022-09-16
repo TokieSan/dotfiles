@@ -41,8 +41,14 @@ op(){
 		music)
 			"ranger" "/home/elt0khy/shared/Music/Music/"
 			;;
-        diff)
-			"ranger" "/home/elt0khy/shared/study/math/diff/"
+        modern)
+			"ranger" "/home/elt0khy/shared/study/math/modern/"
+			;;
+        prop)
+			"ranger" "/home/elt0khy/shared/study/math/prop/"
+			;;
+        rel)
+			"ranger" "/home/elt0khy/shared/study/extra/religion/"
 			;;
 		scr)
 			"ranger" "/home/elt0khy/Documents/scr"

@@ -75,17 +75,14 @@ set number
 set nocompatible
 syntax on
 set hidden
-set tabstop=4
-set softtabstop=4
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set smartindent
 set ruler
 set showcmd
 set incsearch
-set smartindent
 set clipboard=unnamed
-set noexpandtab
 set exrc
 set secure
-set shiftwidth=0
 set splitright
 set cmdheight=2
 set noshowmode
@@ -121,7 +118,7 @@ autocmd FileType md,markdown command -buffer W write | LivedownPreview
 autocmd filetype cpp command -buffer M write | vert terminal ./%:r
 autocmd FileType tex,texmath command -buffer M write | LLPStartPreview
 autocmd FileType md,markdown command -buffer M write | LivedownToggle
-autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -T4p
+autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -s4p
 
 
 
