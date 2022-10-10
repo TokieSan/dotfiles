@@ -44,6 +44,9 @@ op(){
         modern)
 			"ranger" "/home/elt0khy/shared/study/math/modern/"
 			;;
+        ass)
+			"ranger" "/home/elt0khy/shared/study/cs/assembly/"
+            ;;
         prop)
 			"ranger" "/home/elt0khy/shared/study/math/prop/"
 			;;
@@ -108,7 +111,7 @@ alias zazyoutubeaudio='youtube-dl -x -f bestaudio -o "%(title)s.%(ext)s"'
 alias instaload='instaloader --stories --highlights --tagged --login elt0khy'
 alias oggflac='find . -name *flac -exec oggenc -q 7 {} \;'
 alias oggflacrm='find . -name *flac -exec rm {} \;'
-# So I can launch fhgaacenc with a single command:
+# So I can launch fhgaacenc with a single command, fucking hate fhgaacenc
 alias fhgaacenc='wine ~/.wine/drive_c/fhgaacenc/fhgaacenc.exe'
 
 # Turn off a few pesky warnings (well, actually all of them!):
