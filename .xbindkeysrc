@@ -43,6 +43,7 @@
 ## Control + mouse button 2 release event starts rxvt
 #"rxvt"
 #  Control + b:2 + Release
+#
 #increase vol
 "sh /home/elt0khy/scripts/changeVolume.sh +5%"
 	XF86AudioRaiseVolume
@@ -83,13 +84,19 @@
 "networkmanager_dmenu"
 	Shift + F12
 
-"playerctl -a next"
+"pplayerctl next"
 	Shift + F3
 
-"playerctl -a play-pause"
+"pplayerctl previous"
+	XF86AudioPrev
+
+"pplayerctl next"
+	XF86AudioNext
+
+"pplayerctl play-pause"
 	Shift + F1
 
-"playerctl -a previous"
+"pplayerctl previous"
 	Shift + F2
 
 "systemctl hibernate"
@@ -105,7 +112,7 @@
 	Control + Shift + g
 
 "dunstctl history-pop"
-	Shift + F9
+	Control + Shift + F7
 
 "keepassxc"
 	Control + Shift + c
@@ -131,14 +138,14 @@
 
 
 "flameshot full --path /home/elt0khy/Documents/scr/; xbacklight -dec 80; sleep 0.1;xbacklight -inc 80"
-	Super_L
+    Super_L
 
 "mpc sendmessage mpdas love"
 	Alt + Insert
 	
 #course registeration
 #"sleep 0.1 && sh /home/elt0khy/.shoosh/registeration.sh"
-#	Super_L
+    #Super_L
 
 "dunstctl set-paused toggle"
 	Shift + F7

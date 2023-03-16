@@ -1,9 +1,25 @@
+snippet pragma "pragmas" b
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+
+$0
+endsnippet
+
+snippet orderedset "ordered set" b
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+template <class T>
+using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+endsnippet
+
+snippet rng "random" b
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+endsnippet
+
 snippet comp "comptetive programming base" b
 #include <bits/stdc++.h>
 using namespace std;
-
-#pragma GCC optimize("O3,unroll-loops")
-#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 
 #ifdef LOCAL
 #include "/home/elt0khy/comp/debug.h"
@@ -28,18 +44,6 @@ int main() {
 	while( t-- ) tc++, solve();
 	return 0;
 }
-
-/*
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-using namespace __gnu_pbds;
-template <class T>
-using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-
-*/
-
 endsnippet
 
 snippet comb "combinatorics template" b
@@ -57,7 +61,7 @@ ll binpow(ll a, ll b) {
 	}
 	return res;
 }
-void pre() {for(int i = 0; i < MAXN; i++) fact[i] = (i == 0 ? 0 : fact[i - 1] * i) % MOD;}
+void pre() {for(int i = 0; i < MAXN; i++) fact[i] = (i == 0 ? 1 : fact[i - 1] * i) % MOD;}
 ll inv(ll a, ll b) {return (a * (binpow(b, MOD - 2) % MOD)) % MOD;}
 ll npr(ll n, ll r) {return (r < n ? 0 : inv(fact[n], fact[n - r]) % MOD);}
 ll ncr(ll n, ll r) {

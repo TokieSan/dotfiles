@@ -41,17 +41,20 @@ op(){
 		music)
 			"ranger" "/home/elt0khy/shared/Music/Music/"
 			;;
-        modern)
-			"ranger" "/home/elt0khy/shared/study/math/modern/"
+        real)
+			"ranger" "/home/elt0khy/shared/study/math/real/"
 			;;
-        ass)
-			"ranger" "/home/elt0khy/shared/study/cs/assembly/"
+        arch)
+			"ranger" "/home/elt0khy/shared/study/cs/arch/"
             ;;
-        prop)
-			"ranger" "/home/elt0khy/shared/study/math/prop/"
+        os)
+			"ranger" "/home/elt0khy/shared/study/cs/os/"
 			;;
-        rel)
-			"ranger" "/home/elt0khy/shared/study/extra/religion/"
+        mech)
+			"ranger" "/home/elt0khy/shared/study/engr/mech/"
+            ;;
+        swe)
+			"ranger" "/home/elt0khy/shared/study/cs/swe/"
 			;;
 		scr)
 			"ranger" "/home/elt0khy/Documents/scr"
@@ -69,7 +72,7 @@ compress(){
 alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
 alias updatesty='cd /usr/share/texmf/ ; sudo mktexlsr'
-alias sexkb='setxkbmap -model pc104 -layout us,ar -option grp:caps_toggle'
+alias sexkb='setxkbmap -layout us,ar -option grp:caps_toggle'
 alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --delete --exclude={"/home","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/dhcpcd/*","/mnt/backup"} / /mnt/backup'
 dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video2; }
 alias sv='sudo vim'
@@ -100,8 +103,9 @@ alias gitcommit='git commit -m'
 alias kilall='killall'
 alias quitX='pkill -15 Xorg'
 alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
-alias ll='ls -all --color=auto'
+alias ll='ls -all --color=auto -h'
 alias ls='ls --color=auto'
+alias cal='cal --three'
 alias df='df -h'
 alias deemix='deemix --bitrate FLAC -p .'
 alias harwest='~/.local/bin/harwest'

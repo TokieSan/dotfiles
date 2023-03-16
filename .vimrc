@@ -18,7 +18,10 @@ Plugin 'shime/vim-livedown'
 Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plugin 'gabrielsimoes/cfparser.vim'
 Plugin 'preservim/nerdcommenter'
+Plugin '907th/vim-auto-save'
 call vundle#end()           
+
+let g:auto_save = 1
 
 filetype plugin indent on   
 " should markdown preview get shown automatically upon opening markdown buffer
@@ -151,6 +154,11 @@ nnoremap <C-K> <CMD>m .-2<CR>
 nnoremap <C-J> <CMD>m .+1<CR>
 nnoremap <C-H> <<
 nnoremap <C-L> >> 
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 
 inoremap <c-f> <c-g>u<Esc>[s1z=`]a<c-g>u
 inoremap <C-v> <ESC>"+pa

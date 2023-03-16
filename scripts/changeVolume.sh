@@ -2,7 +2,7 @@
 # changeVolume
 
 # Arbitrary but unique message id
-msgId="991049"
+msgId=$RANDOM
 
 # Change the volume using alsa(might differ if you use pulseaudio)
 pactl set-sink-volume @DEFAULT_SINK@ "$@" > /dev/null
