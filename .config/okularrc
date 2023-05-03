@@ -4,6 +4,10 @@ shouldShowMenuBarComingFromFullScreen=true
 shouldShowToolBarComingFromFullScreen=true
 
 [MainWindow]
+1289x725 screen: Height=710
+1289x725 screen: Width=1287
+1289x725 screen: XPosition=1
+1289x725 screen: YPosition=15
 DP-2=DP-2
 DP-2 HDMI-0 Height 1600x900=877
 DP-2 HDMI-0 Height 1920x1080=1057
@@ -28,33 +32,32 @@ DP-2 Width 1289x725=1287
 DP-2 Width 1289x725 DP-2=1287
 DP-2 Width 1920x1080=1918
 DP-2 XPosition 1289x725=1
-DP-2 XPosition 1289x725 DP-2=1
+DP-2 XPosition 1289x725 DP-2=0
 DP-2 XPosition 1920x1080=1
 DP-2 YPosition 1289x725=15
-DP-2 YPosition 1289x725 DP-2=15
+DP-2 YPosition 1289x725 DP-2=0
 DP-2 YPosition 1920x1080=22
-RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAAAABQcAAAKKAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAQAAAAEAAAAsAHEAdQBpAGMAawBBAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHICAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
+State=AAAA/wAAAAD9AAAAAAAABQcAAAJmAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAQAAAAEAAAAsAHEAdQBpAGMAawBBAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHICAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/shared/study/cs/arch/exans/Fall19_CSCE3301_exam1_sec1_Sol.pdf
-File10[$e]=$HOME/scrap_auc/900192441_mhdahab@aucegypt.edu.pdf
-File2[$e]=$HOME/shared/study/cs/arch/exans/everything.pdf
-File3[$e]=$HOME/Downloads/account-statement.pdf
-File4[$e]=$HOME/shared/study/cs/archive/assembly/ass1/main.pdf
-File5[$e]=$HOME/scrap_auc/900192441.pdf
-File6[$e]=$HOME/scrap_auc/myfile.pdf
-File7[$e]=$HOME/scrap_auc/900184016_akramaziz@aucegypt.edu.pdf
-File8[$e]=$HOME/scrap_auc/900184042_AndrewHany@aucegypt.edu.pdf
-File9[$e]=$HOME/scrap_auc/900191346_Zeinahelal@aucegypt.edu.pdf
-Name1[$e]=Fall19_CSCE3301_exam1_sec1_Sol.pdf
-Name10[$e]=900192441_mhdahab@aucegypt.edu.pdf
-Name2[$e]=everything.pdf
-Name3[$e]=account-statement.pdf
-Name4[$e]=main.pdf
-Name5[$e]=900192441.pdf
-Name6[$e]=myfile.pdf
-Name7[$e]=900184016_akramaziz@aucegypt.edu.pdf
-Name8[$e]=900184042_AndrewHany@aucegypt.edu.pdf
-Name9[$e]=900191346_Zeinahelal@aucegypt.edu.pdf
+File1[$e]=$HOME/shared/study/engr/mech/mid2/Previous Finals and Midterms with solutions Dynamics only/problem set 2 solution.pdf
+File10[$e]=$HOME/shared/study/cs/arch/project/MS3/MS3 Report.pdf
+File2[$e]=$HOME/shared/study/engr/mech/mid2/MidTerm2/Fall 2022/MidTerm 2 - Fall 2022 - Questions.pdf
+File3[$e]=$HOME/shared/study/engr/mech/mid2/MidTerm2/Fall 2022/MidTerm 2 - Fall 2022 - Model Answer.pdf
+File4[$e]=$HOME/Downloads/CamScanner 03-30-2023 15.52.pdf
+File5[$e]=$HOME/shared/study/math/real/res.pdf
+File6[$e]=$HOME/shared/study/cs/arch/lab8/900202729_Lab7.pdf
+File7[$e]=$HOME/shared/study/cs/arch/lab8/Mostafa Abdelkhalik_Lab8/900203356 Report.pdf
+File8[$e]=$HOME/shared/study/cs/arch/lab8/900202729_lab8/Lab 8 Report.pdf
+File9[$e]=$HOME/shared/study/cs/os/OSLab9_BadrTokhyMostafa/Pthreads - OS Lab.pptx.pdf
+Name1[$e]=problem set 2 solution.pdf
+Name10[$e]=MS3 Report.pdf
+Name2[$e]=MidTerm 2 - Fall 2022 - Questions.pdf
+Name3[$e]=MidTerm 2 - Fall 2022 - Model Answer.pdf
+Name4[$e]=CamScanner 03-30-2023 15.52.pdf
+Name5[$e]=res.pdf
+Name6[$e]=900202729_Lab7.pdf
+Name7[$e]=900203356 Report.pdf
+Name8[$e]=Lab 8 Report.pdf
+Name9[$e]=Pthreads - OS Lab.pptx.pdf

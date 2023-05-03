@@ -19,6 +19,7 @@ Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plugin 'gabrielsimoes/cfparser.vim'
 Plugin 'preservim/nerdcommenter'
 Plugin '907th/vim-auto-save'
+Plugin 'lervag/vimtex'
 call vundle#end()           
 
 let g:auto_save = 1
@@ -40,7 +41,6 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-
 let g:UltiSnipsSnippetDirectories=$HOME.'/.vim/UltiSnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
@@ -93,8 +93,8 @@ set laststatus=2
 " set spell
 " set hlsearch
 set updatetime=300
-" set relativenumber
-" set colorcolumn=80
+set relativenumber
+set colorcolumn=80
 highlight LineNr ctermfg=lightgreen ctermbg=233
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
@@ -154,6 +154,7 @@ nnoremap <C-K> <CMD>m .-2<CR>
 nnoremap <C-J> <CMD>m .+1<CR>
 nnoremap <C-H> <<
 nnoremap <C-L> >> 
+nnoremap bb <esc>gggqG
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -180,5 +181,4 @@ nmap <leader>y ggVG"+y''
 
 let lineNumber = line('.')
 
-nmap bb <esc>gggqG
 cmap w!! %!sudo tee > /dev/null %

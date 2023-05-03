@@ -16,6 +16,7 @@ alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 export PATH=$PATH:~/.shoosh/
 export PATH=$PATH:~/scripts/
 export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:/home/elt0khy/.cargo/bin/
 
 (cat ~/.cache/wal/sequences &)
 clear

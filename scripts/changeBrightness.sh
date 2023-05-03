@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Arbitrary but unique message id
-msgId="991949"
+msgId=$RANDOM
 
 xbacklight "$@" > /dev/null
 
