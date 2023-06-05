@@ -27,6 +27,8 @@ ulimit -s 2000123
 export QT_QPA_PLATFORMTHEME=qt5ct
 export DXVK_HUD=devinfo,fps
 export _JAVA_AWT_WM_NONREPARENTING=1
+export CCACHE_COMPRESS=1
+export CCACHE_DIR=/home/elt0khy/shared/.ccache
 # PS1='[\u@\h \W]\$ '
 
 

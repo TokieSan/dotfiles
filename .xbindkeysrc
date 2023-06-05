@@ -133,9 +133,11 @@
 "sh /home/elt0khy/scripts/shutdowndmenu.sh"
 	XF86PowerOff
 
-"sh /home/elt0khy/scripts/shutdowndmenu.sh"
+    "sh /home/elt0khy/scripts/shutdowndmenu.sh"
 	Alt + Shift + o	
 
+#"sh /home/elt0khy/key_toggle.sh"
+        #F9
 
 "flameshot full --path /home/elt0khy/Documents/scr/; xbacklight -dec 80; sleep 0.1;xbacklight -inc 80"
     Super_L

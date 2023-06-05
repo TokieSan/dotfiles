@@ -122,7 +122,7 @@ autocmd filetype cpp command -buffer M write | vert terminal ./%:r
 autocmd FileType tex,texmath command -buffer M write | LLPStartPreview
 autocmd FileType md,markdown command -buffer M write | LivedownToggle
 autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -s4p
-
+autocmd BufNewFile,BufRead cpp,cxx,hxx,h set formatprg=astyle\ -s4p
 
 
 nnoremap <C-Left> :tabprevious<CR>
@@ -138,6 +138,7 @@ nnoremap <Leader>c :W<CR>
 " (R)un
 nnoremap <Leader>r :M <CR>
 " (Q)uit
+nnoremap <Leader>b <esc>gggqG
 nnoremap <Leader>q :wq! <CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <S-q> :q<CR>
@@ -154,7 +155,6 @@ nnoremap <C-K> <CMD>m .-2<CR>
 nnoremap <C-J> <CMD>m .+1<CR>
 nnoremap <C-H> <<
 nnoremap <C-L> >> 
-nnoremap bb <esc>gggqG
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>

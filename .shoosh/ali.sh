@@ -36,6 +36,18 @@ search(){
 	"links" "https://duckduckgo.com/?q=${1}"
 }
 
+newmon(){
+    case ${1} in
+        l)
+            "xrandr" "--output" "HDMI-0" "--right-of" "DP-2" "--mode" "1920x1080" "--rotate" "left"
+            ;;
+        *)
+            "xrandr" "--output" "HDMI-0" "--right-of" "DP-2" "--mode" "1920x1080" "--rotate" "normal"
+            ;;
+    esac
+    feh --bg-max /home/elt0khy/Documents/Random\ GIMP/Arch\ Background2.png &
+}
+
 op(){
 	case ${1} in
 		music)
@@ -117,6 +129,8 @@ alias oggflac='find . -name *flac -exec oggenc -q 7 {} \;'
 alias oggflacrm='find . -name *flac -exec rm {} \;'
 # So I can launch fhgaacenc with a single command, fucking hate fhgaacenc
 alias fhgaacenc='wine ~/.wine/drive_c/fhgaacenc/fhgaacenc.exe'
+alias pkgbysize='expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -rhk 2 | less'
+alias cl='cd ~/libreoffice/libreoffice/'
 
 # Turn off a few pesky warnings (well, actually all of them!):
 export WINEDEBUG=-all
