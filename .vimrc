@@ -94,7 +94,7 @@ set laststatus=2
 " set hlsearch
 set updatetime=300
 set relativenumber
-set colorcolumn=80
+"set colorcolumn=80
 highlight LineNr ctermfg=lightgreen ctermbg=233
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
@@ -113,7 +113,7 @@ set mouse=a
 
 autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
-autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=%:r % 
+"autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=%:r % 
 autocmd FileType cpp,h command -buffer W write | !g++ -std=c++17 -O2 -Wall -Wextra "%" -o "%:r" -g -fsanitize=undefined -DLOCAL 
 autocmd FileType md,markdown autocmd TextChanged,TextChangedI <buffer> silent write
 autocmd FileType md,markdown command -buffer W write | LivedownPreview

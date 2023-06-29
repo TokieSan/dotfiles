@@ -84,7 +84,7 @@ compress(){
 alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
 alias updatesty='cd /usr/share/texmf/ ; sudo mktexlsr'
-alias sexkb='setxkbmap -layout us,ar -option grp:caps_toggle'
+alias sexkb='setxkbmap -layout us,ara -option grp:caps_toggle'
 alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --delete --exclude={"/home","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/dhcpcd/*","/mnt/backup"} / /mnt/backup'
 dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video2; }
 alias sv='sudo vim'
@@ -92,9 +92,30 @@ alias tunnelfast='sudo sshuttle --method=tproxy --remote=eltokhy@52.188.119.232 
 fastHotspot() { nmcli dev wifi hotspot ifname wlan0 ssid GNUHotspot password ${hotspotPwd}; }
 export -f fastHotspot
 
+extract() {
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.tar.bz2) tar xvjf "$1" ;;
+      *.tar.gz) tar xvzf "$1" ;;
+      *.bz2) bunzip2 "$1" ;;
+      *.rar) unrar x "$1" ;;
+      *.gz) gunzip "$1" ;;
+      *.tar) tar xvf "$1" ;;
+      *.tbz2) tar xvjf "$1" ;;
+      *.tgz) tar xvzf "$1" ;;
+      *.zip) unzip "$1" ;;
+      *.Z) uncompress "$1" ;;
+      *.7z) 7z x "$1" ;;
+      *) echo "Unknown archive format: $1" ;;
+    esac
+  else
+    echo "Not a valid file: $1"
+  fi
+}
+
+alias x='extract'
 alias code='codium'
-alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++14 \
--fsanitize=undefined,address -DLOCAL'
+alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++14 -fsanitize=undefined,address -DLOCAL'
 alias weather='curl ping.gg'
 alias epic='rare'
 alias fucking='sudo'
@@ -109,13 +130,16 @@ alias rm='trash-put'
 alias pulsuspendrestore='systemctl restart --user pulseaudio'
 alias p='sudo pacman'
 alias du='du -h'
+alias duf='du -h --max-depth=1'
+alias duh='du -sh * | sort -hr'
 alias gitadd='git add -f'
 alias gitpush='git push origin main'
 alias gitcommit='git commit -m'
 alias kilall='killall'
 alias quitX='pkill -15 Xorg'
 alias rcrdffmpeg='ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default'
-alias ll='ls -all --color=auto -h'
+alias ll='ls -alh --color=auto -h'
+alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias cal='cal --three'
 alias df='df -h'
@@ -131,6 +155,9 @@ alias oggflacrm='find . -name *flac -exec rm {} \;'
 alias fhgaacenc='wine ~/.wine/drive_c/fhgaacenc/fhgaacenc.exe'
 alias pkgbysize='expac "%n %m" -l'\n' -Q $(pacman -Qq) | sort -rhk 2 | less'
 alias cl='cd ~/libreoffice/libreoffice/'
+alias myip='curl ipinfo.io/ip'
+alias recent='ls -lt | head'
+
 
 # Turn off a few pesky warnings (well, actually all of them!):
 export WINEDEBUG=-all
