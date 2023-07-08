@@ -148,7 +148,6 @@ alias harwest='~/.local/bin/harwest'
 alias rgrep='rga'
 alias xx="curl -F 'f:1=<-' ix.io"
 alias zazyoutubeaudio='youtube-dl -x -f bestaudio -o "%(title)s.%(ext)s"'
-alias instaload='instaloader --stories --highlights --tagged --login elt0khy'
 alias oggflac='find . -name *flac -exec oggenc -q 7 {} \;'
 alias oggflacrm='find . -name *flac -exec rm {} \;'
 # So I can launch fhgaacenc with a single command, fucking hate fhgaacenc
