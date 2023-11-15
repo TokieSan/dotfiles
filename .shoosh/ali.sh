@@ -38,6 +38,8 @@ search(){
 
 newmon(){
     case ${1} in
+        r)
+            "xrandr" "--output" "HDMI-0" "--left-of" "DP-2" "--mode" "1920x1080"            ;;
         l)
             "xrandr" "--output" "HDMI-0" "--right-of" "DP-2" "--mode" "1920x1080" "--rotate" "left"
             ;;
@@ -54,19 +56,19 @@ op(){
 			"ranger" "/home/elt0khy/shared/Music/Music/"
 			;;
         real)
-			"ranger" "/home/elt0khy/shared/study/math/real/"
+			"ranger" "/home/elt0khy/shared/study/math/anal2"
 			;;
-        arch)
-			"ranger" "/home/elt0khy/shared/study/cs/arch/"
+        net)
+			"ranger" "/home/elt0khy/shared/study/cs/net/"
             ;;
-        os)
-			"ranger" "/home/elt0khy/shared/study/cs/os/"
+        dis)
+			"ranger" "/home/elt0khy/shared/study/cs/dis/"
 			;;
-        mech)
-			"ranger" "/home/elt0khy/shared/study/engr/mech/"
+        econ)
+			"ranger" "/home/elt0khy/shared/study/engr/econ/"
             ;;
-        swe)
-			"ranger" "/home/elt0khy/shared/study/cs/swe/"
+        dsp)
+			"ranger" "/home/elt0khy/shared/study/cs/dsp/"
 			;;
 		scr)
 			"ranger" "/home/elt0khy/Documents/scr"
@@ -84,7 +86,7 @@ compress(){
 alias mon='sh /home/elt0khy/.shoosh/new_monitor.sh'
 calc() { echo "scale=2;$1" | bc; }
 alias updatesty='cd /usr/share/texmf/ ; sudo mktexlsr'
-alias sexkb='setxkbmap -layout us,ara -option grp:caps_toggle'
+alias sexkb='setxkbmap -layout us,ara -option grp:caps_toggle; xsetwacom set "Wacom One by Wacom S Pen eraser" MapToOutput HEAD-1; xsetwacom set "Wacom One by Wacom S Pen stylus" MapToOutput HEAD-1;'
 alias full_system_backup_without_home='sudo rsync -aAXHx --info=progress2 --delete --exclude={"/home","/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/dhcpcd/*","/mnt/backup"} / /mnt/backup'
 dummycam() { ffmpeg -re -stream_loop -1 -i "${1}" -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video2; }
 alias sv='sudo vim'

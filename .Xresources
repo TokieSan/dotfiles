@@ -2,7 +2,7 @@ xterm*Background: #000000
 XTerm.vt100.reverseVideo: true
 XTerm.vt100.faceName: Ubuntu Mono:size=16:antialias=false
 XTerm.vt100.font: 7x13
-URxvt.font: xft:Ubuntu Mono:size=10, Amiri:size=16, xft:Noto Color Emoji:style=regular:size=11
+URxvt.font: xft:Ubuntu Mono:size=10, Amiri:size=14, xft:Noto Color Emoji:style=regular:size=11
 URxvt.perl-ext-common: font-size
 URxvt.scrollBar: false
 URxvt.termName: xterm-256color

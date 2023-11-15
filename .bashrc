@@ -3,8 +3,12 @@
 #
 
 # If not running interactively, don't do anything
-
-export PS1='\w ' 
+git_branch() {
+    if [[ $PWD != $HOME ]]; then
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+    fi
+}
+export PS1="\w \$(git_branch)"
 
 [[ $- != *i* ]] && return
 
@@ -17,6 +21,7 @@ export PATH=$PATH:~/.shoosh/
 export PATH=$PATH:~/scripts/
 export PATH=$PATH:~/.local/bin/
 export PATH=$PATH:/home/elt0khy/.cargo/bin/
+export PATH=$PATH:/root/.local/bin/
 
 (cat ~/.cache/wal/sequences &)
 clear
@@ -29,6 +34,10 @@ export DXVK_HUD=devinfo,fps
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CCACHE_COMPRESS=1
 export CCACHE_DIR=/home/elt0khy/shared/.ccache
+export VDPAU_DRIVER=radeonsi vainfo
+#export QT_DEVICE_PIXEL_RATIO=2
+#export QT_AUTO_SCREEN_SCALE_FACTOR=true
+
 # PS1='[\u@\h \W]\$ '
 
 
