@@ -117,7 +117,7 @@ extract() {
 
 alias x='extract'
 alias code='codium'
-alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++14 -fsanitize=undefined,address -DLOCAL'
+alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++17 -fsanitize=undefined,address -DLOCAL'
 alias weather='curl ping.gg'
 alias epic='rare'
 alias fucking='sudo'

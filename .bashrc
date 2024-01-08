@@ -29,6 +29,8 @@ clear
 force_color_prompt=yes
 ulimit -s 2000123
 # set GTK_USE_PORTAL=1 
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 export QT_QPA_PLATFORMTHEME=qt5ct
 export DXVK_HUD=devinfo,fps
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -55,4 +57,10 @@ export VDPAU_DRIVER=radeonsi vainfo
 #fi
 #unset __conda_setup
 # <<< conda initialize <<<
+
+
+export ATUIN_NOBIND="true"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
+bind -x '"\C-h": __atuin_history'
 

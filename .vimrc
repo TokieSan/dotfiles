@@ -47,6 +47,16 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 
+function! s:get_commit_message()
+  let file = expand('%:p')
+  let message = systemlist('get_commit_msg '.shellescape(file))[0]
+  execute 'silent !git add ' . file
+  execute 'silent !git commit -m "'.message.'" %'
+endfunction
+
+command! -nargs=0 Ship call s:get_commit_message() | silent :redraw! | echo 'Shipped!'
+
+
 " Executive used when opening vista sidebar without specifying it.
 let g:livepreview_previewer = 'evince'
 " See all the avaliable executives via `:echo g:vista#executives`.
@@ -114,7 +124,7 @@ set mouse=a
 autocmd FileType sh command -buffer W write | !./%
 autocmd FileType python command -buffer W write | !python %
 "autocmd FileType tex,texmath command -buffer W write | !pdflatex -jobname=%:r % 
-autocmd FileType cpp,h command -buffer W write | !g++ -std=c++17 -O2 -Wall -Wextra "%" -o "%:r" -g -fsanitize=undefined -DLOCAL 
+autocmd FileType cpp,h command -buffer W write | !g++ "%" -std=c++17 -O2 -Wall -Wextra -o "%:r" -g -fsanitize=undefined -DLOCAL 
 autocmd FileType md,markdown autocmd TextChanged,TextChangedI <buffer> silent write
 autocmd FileType md,markdown command -buffer W write | LivedownPreview
 
