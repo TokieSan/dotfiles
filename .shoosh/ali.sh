@@ -55,20 +55,23 @@ op(){
 		music)
 			"ranger" "/home/elt0khy/shared/Music/Music/"
 			;;
-        real)
-			"ranger" "/home/elt0khy/shared/study/math/anal2"
+        elard)
+            "ranger" "/home/elt0khy/shared/study/extra/elard"
+            ;;
+        comp)
+			"ranger" "/home/elt0khy/shared/study/math/complex"
 			;;
         net)
 			"ranger" "/home/elt0khy/shared/study/cs/net/"
             ;;
-        dis)
-			"ranger" "/home/elt0khy/shared/study/cs/dis/"
+        dd)
+			"ranger" "/home/elt0khy/shared/study/cs/dd/"
 			;;
         econ)
 			"ranger" "/home/elt0khy/shared/study/engr/econ/"
             ;;
-        dsp)
-			"ranger" "/home/elt0khy/shared/study/cs/dsp/"
+        db)
+			"ranger" "/home/elt0khy/shared/study/cs/db/"
 			;;
 		scr)
 			"ranger" "/home/elt0khy/Documents/scr"

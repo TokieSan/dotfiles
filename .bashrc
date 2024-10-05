@@ -40,6 +40,9 @@ export VDPAU_DRIVER=radeonsi vainfo
 #export QT_DEVICE_PIXEL_RATIO=2
 #export QT_AUTO_SCREEN_SCALE_FACTOR=true
 
+# get apikeys from .env
+export $(grep -v '^#' /home/elt0khy/.env | xargs)
+
 # PS1='[\u@\h \W]\$ '
 
 
